@@ -88,8 +88,8 @@ char normal(char *palabra)
     palabra[30]=mayusculas(palabra);
 }
 
-void salida1(char palabra[])
+void salida1(char *palabra)
 {
-    palabra[]=normal(palabra);
+    palabra[30]=normal(palabra);
 
 }
