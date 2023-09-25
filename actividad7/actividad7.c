@@ -21,6 +21,7 @@ void salida6(char palabra[]);
 void salida7(char palabra[]);
 void salida8(char palabra[]);
 void salida9(char palabra[]);
+void salida10(char palabra[]);
 
 void normal(char palabra[]);
 void mayusculas(char palabra[]);
@@ -124,6 +125,7 @@ void salidas(char palabra[])
     salida7(palabra);
     salida8(palabra);
     salida9(palabra);
+    salida10(palabra);
 }
 
 void mayusculas(char palabra[])
@@ -285,19 +287,16 @@ void salida9(char palabra[])
         contador++;
     }
 
-    char vocales[contador];
     char resto[contador];
     for(int i=0; palabra[i] != '\0'; i++)
     {
         if(palabra[i]=='A' || palabra[i]=='E' || palabra[i]=='I' ||  palabra[i]=='O' ||  palabra[i]=='U')
         {
-            vocales[i]= palabra[i];
             resto[i]=0;
         }
         else
         {
-            resto[i]=palabra[i];
-            vocales[i]=0;
+            resto[i]=palabra[i];   
         } 
     }
     for(int i=0; i<=contador; i++)
@@ -307,7 +306,31 @@ void salida9(char palabra[])
             printf("%c", resto[i]);
         }
     }
-    printf("\n");
+    printf("\n\n");
+    
+}
+
+void salida10(char palabra[])
+{
+    int contador=0;
+    for(int i=0; palabra[i] !='\0'; i++)
+    {
+        contador++;
+    }
+
+    char vocales[contador];
+    for(int i=0; palabra[i] != '\0'; i++)
+    {
+        if(palabra[i]=='A' || palabra[i]=='E' || palabra[i]=='I' ||  palabra[i]=='O' ||  palabra[i]=='U')
+        {
+            vocales[i]= palabra[i];
+        }
+        else
+        {
+            vocales[i]=0;
+        } 
+    }
+
     for(int i=0; i<= contador; i++)
     {
         if(palabra[i]>=65 && palabra[i]<=90)
