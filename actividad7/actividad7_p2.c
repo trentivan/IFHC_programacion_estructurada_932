@@ -400,6 +400,15 @@ void conjunto_cadenas(char palabra[])
 
 void palindromo(char palabra[])
 {
+    for(int i=0; palabra[i] != '\0';i++)
+    {
+        if(palabra[i]== ' ')
+        {
+            palabra[i]=0;
+        }
+        // printf("%c", palabra[i]);
+    }
+    
     int contador;
     for(contador=0; palabra[contador] != '\0'; contador++);
     char palabra2[contador];
