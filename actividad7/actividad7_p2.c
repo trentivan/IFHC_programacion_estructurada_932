@@ -1,7 +1,9 @@
 // Hernandez Ceseña Ivan Fernando  373077
 // 24/09/23
-// salidas de cadena de diferente forma
-// NYP_ACT7_p1_932
+// convierte la cadena en mayusculas, minusculas, capital, da el numero de caracteres,
+// numero de caracteres al reves, la cadena sin espacios, conjunto de varias opciones,
+// compara si es un palindromo o no
+// NYP_ACT7_p2_932
 
 #include <stdio.h>
 #include <stdlib.h>
