@@ -14,7 +14,12 @@ void validar(char []);
 
 void mayusculas(char []);
 void minusculas(char []);
+void fmayusculas(char []);
+void fminusculas(char []);
 void capital(char []);
+void numero_caracteres(char []);
+void caracteres_alreves(char []);
+void sin_espacios(char []);
 
 int main()
 {
@@ -30,6 +35,9 @@ int menu()
     printf("1) mayusculas\n");
     printf("2) minusculas\n");
     printf("3) capital\n");
+    printf("4) numero de caracteres\n");
+    printf("5) numero de caracteres al reves\n");
+    printf("cadena sin espacios\n");
     scanf("%d",& op);
     return op;
 }
@@ -45,15 +53,27 @@ void msg()
         switch(op)
         {
             case 1:
-            mayusculas(palabra);
+            fmayusculas(palabra);
             break;
 
             case 2:
-            minusculas(palabra);
+            fminusculas(palabra);
             break;
 
             case 3:
             capital(palabra);
+            break;
+
+            case 4:
+            numero_caracteres(palabra);
+            break;
+
+            case 5:
+            caracteres_alreves(palabra);
+            break;
+
+            case 6:
+            sin_espacios(palabra);
             break;
         }
         op = repetir();
@@ -80,23 +100,17 @@ void validar(char palabra[])
         printf("dame una palabra (solo letras mayusculas y/o ,minusculas) (maximo 29 letras)\n");
         fflush(stdin);
         gets(palabra);
+        printf("\n");
 
-        for(int j=0;  palabra[i] != '\0' ; j++)
+        for(int j=0, espacio=0;  palabra[i] != '\0' && espacio != 2 ; j++)
         {
             i++;
-            // printf("%c \n", palabra[i]);
-            if(palabra[i] == ' ')
-            {
-                if(palabra[i+1] == ' ')
-                {
-                    printf("valor invalido ingresa otra palabra\n");
-                    bandera=1;
-                }
-            }
+            
             if(palabra[i] < 65)
             {
                 printf("valor invalido ingresa otra palabra\n");
                 bandera=1;
+                espacio=0;
             }
             if(palabra[i] > 64)
             {
@@ -106,6 +120,7 @@ void validar(char palabra[])
                     {
                         printf("valor invalido ingresa otra palabra\n");
                         bandera = 1;
+                        espacio=0;
                     }
                     else
                     {
@@ -113,8 +128,20 @@ void validar(char palabra[])
                         {
                             printf("valor invalido ingresa otra palabra\n");
                             bandera = 1;
+                            espacio=0;
                         }
                     }
+                }
+            }
+            else 
+            {
+                if( palabra[i] == ' ')
+                {
+                    if(espacio == 1)
+                    {
+                        printf("valor invalido ingresa otra palabra\n");
+                    }
+                    espacio = 1;
                 }
             }
         }
@@ -170,13 +197,91 @@ void minusculas(char palabra[])
                 }
             }
         }
+    }
+}
+
+void fmayusculas(char palabra[])
+{
+    int i;
+    for(i=0; palabra[i] != '\0'; i++)
+    {
+        if(palabra[i] >= 'a')
+        {
+            if(palabra[i] <= 'z')
+            {
+                palabra[i]= palabra[i] - 32;
+            }
+        }
+        else
+        {
+            if(palabra[i] >= 'A')
+            {
+                if(palabra[i] <= 'Z')
+                {
+                    palabra[i]=palabra[i];
+                }
+            }
+        }
+        printf("%c", palabra[i]);
+    }
+}
+
+void fminusculas(char palabra[])
+{
+    
+    for(int i=0; palabra[i] != '\0'; i++)
+    {
+        if(palabra[i] >= 'A')
+        {
+            if(palabra[i] <= 'Z')
+            {
+                palabra[i]= palabra[i] + 32;
+            }
+        }
+        else
+        {
+            if(palabra[i] >= 'a')
+            {
+                if(palabra[i] <= 'a')
+                {
+                    palabra[i]=palabra[i];
+                }
+            }
+        }
         printf("%c", palabra[i]);
     }
 }
 
 void capital(char palabra[])
 {
+    int convertir=0;
     minusculas(palabra);
+
+    for(int i=0; palabra[i] != '\0'; i++)
+    {
+        if(convertir==1)
+        {
+            if(palabra[i]>='a')
+            {
+                if(palabra[i]<= 'z')
+                {
+                    palabra[i]= palabra[i]-32;
+                }
+            }
+            if(palabra[i] >= 'A')
+            {
+                if(palabra[i] <= 'Z')
+                {
+                    palabra[i]= palabra[i] + 32;
+                }
+                convertir = 0;
+            }
+        }
+        else
+        {
+            convertir=1;
+        }
+    }
 
     for(int i=0; palabra[i] != '\0';i++)
     {
@@ -187,7 +292,37 @@ void capital(char palabra[])
 
         if(palabra[i]==32)
         {
-            palabra[i+1] = palabra[i+1]+32;
+            palabra[i+1] = palabra[i+1]-32;
+        }
+        printf("%c", palabra[i]);
+    }
+}
+
+void numero_caracteres(char palabra[])
+{ 
+    int contador;
+    for(contador=0; palabra[contador] != '\0'; contador++);
+    printf("%d", contador);
+}
+
+void caracteres_alreves(char palabra[])
+{
+    int contador, contador2;
+    for(contador=0; palabra[contador] != '\0'; contador++);
+    
+    for(contador2= contador; contador2 >=0 ; contador2--)
+    {
+        printf("%d", contador2+1);
+    }
+}
+
+void sin_espacios(char palabra[])
+{
+    for(int i=0; palabra[i] != '\0';i++)
+    {
+        if(palabra[i]== ' ')
+        {
+            palabra[i]=0;
         }
         printf("%c", palabra[i]);
     }

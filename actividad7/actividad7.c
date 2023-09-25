@@ -102,6 +102,11 @@ void validar(char palabra[])
                     }
                 }
             }
+            else
+            {
+                printf("valor invalido ingresa otra palabra\n");
+                bandera = 1;
+            }
         }
         
     }while(bandera == 1);
