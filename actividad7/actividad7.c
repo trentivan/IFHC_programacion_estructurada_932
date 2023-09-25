@@ -11,16 +11,16 @@ void msg(void);
 int repetir(void);
 void validar(char []);
 
-void salidas(char *palabra);
-void salida1(char *palabra);
-void salida2(char *palabra);
-void salida3(char *palabra);
-void salida4(char *palabra);
-void salida5(char *palabra);
-void salida6(char *palabra);
-void salida7(char *palabra);
-void salida8(char *palabra);
-void salida9(char *palabra);
+void salidas(char palabra[]);
+void salida1(char palabra[]);
+void salida2(char palabra[]);
+void salida3(char palabra[]);
+void salida4(char palabra[]);
+void salida5(char palabra[]);
+void salida6(char palabra[]);
+void salida7(char palabra[]);
+void salida8(char palabra[]);
+void salida9(char palabra[]);
 
 void normal(char palabra[]);
 void mayusculas(char palabra[]);
@@ -64,6 +64,7 @@ void validar(char palabra[])
         printf("dame una palabra (solo letras mayusculas y/o ,minusculas) (maximo 29 letras)\n");
         fflush(stdin);
         gets(palabra);
+        printf("\n");
 
         for(int j=0;  palabra[i] != '\0' ; j++)
         {
