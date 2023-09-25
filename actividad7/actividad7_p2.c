@@ -14,12 +14,16 @@ void validar(char []);
 
 void mayusculas(char []);
 void minusculas(char []);
+
 void fmayusculas(char []);
 void fminusculas(char []);
 void capital(char []);
 void numero_caracteres(char []);
 void caracteres_alreves(char []);
 void sin_espacios(char []);
+void comenzar_sinespacios(char []);
+void conjunto_cadenas(char []);
+void palindromo(char []);
 
 int main()
 {
@@ -37,7 +41,10 @@ int menu()
     printf("3) capital\n");
     printf("4) numero de caracteres\n");
     printf("5) numero de caracteres al reves\n");
-    printf("cadena sin espacios\n");
+    printf("6) cadena sin espacios\n");
+    printf("7) regla de cadena\n");
+    printf("8) conjunto ( opciones 1,2,3,5,6)\n");
+    printf("9) palindromo\n");
     scanf("%d",& op);
     return op;
 }
@@ -74,6 +81,18 @@ void msg()
 
             case 6:
             sin_espacios(palabra);
+            break;
+
+            case 7:
+            comenzar_sinespacios(palabra);
+            break;
+
+            case 8:
+            conjunto_cadenas(palabra);
+            break;
+
+            case 9:
+            palindromo(palabra);
             break;
         }
         op = repetir();
@@ -326,4 +345,86 @@ void sin_espacios(char palabra[])
         }
         printf("%c", palabra[i]);
     }
+}
+
+void comenzar_sinespacios(char palabra[])
+{
+    int contador=0;
+    for(contador=0; palabra[contador] != '\0';contador++)
+    {
+        contador++;
+    }
+    
+    for(int i=0, contador; palabra[i] != '\0';i++)
+    {
+        if(i==0)
+        {
+            if(palabra[i] == ' ')
+            {
+                printf("la cadena no puede empezar con espacios\n");
+                palabra[i]=0;
+            }
+        }
+        if(i==contador)
+        {
+            if(palabra[i]==' ')
+            {
+                printf("la cadena no puede terminar con espacios\n");
+                palabra[i]=0;
+            }
+        }
+        printf("%c", palabra[i]);
+    }
+
+    for(int i=0; palabra[i] != '\0';i++)
+    {
+        printf("%c", palabra[i]);
+    }
+}
+
+void conjunto_cadenas(char palabra[])
+{
+    fmayusculas(palabra);
+    printf("\n");
+    fminusculas(palabra);
+    printf("\n");
+    capital(palabra);
+    printf("\n");
+    sin_espacios(palabra);
+    printf("\n");
+    caracteres_alreves(palabra);
+    printf("\n");
+}
+
+void palindromo(char palabra[])
+{
+    int contador;
+    for(contador=0; palabra[contador] != '\0'; contador++);
+    char palabra2[contador];
+    printf("%d\n", contador);
+
+    for(int i = contador; i>=0; i--)
+    {
+        palabra2[i] = palabra[i];
+        // printf("%c", palabra2[i]);
+    }
+
+    for (int i = 0; i < contador; i++) 
+    {
+        palabra2[i] = palabra[contador-i-1];
+    }
+    palabra2[contador] = '\0';
+
+    printf("Cadena original: %s\n", palabra);
+    printf("Cadena invertida: %s\n", palabra2);
+    
+    if(strcmp(palabra, palabra2 )== 0)
+    {
+        printf("la cadena es un palindromo\n");
+    }
+    else
+    {
+        printf("la cadena no es un palindromo\n");
+    }
+
 }
