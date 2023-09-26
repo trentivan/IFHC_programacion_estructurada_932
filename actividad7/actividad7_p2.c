@@ -355,7 +355,7 @@ void sin_espacios(char palabra[])
     {
         if(palabra[i]== ' ')
         {
-            palabra[i]=0;
+            palabra[i]=palabra[i+1];
         }
         // printf("%c", palabra[i]);
     }
