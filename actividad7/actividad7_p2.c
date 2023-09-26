@@ -345,21 +345,24 @@ void caracteres_alreves(char palabra[])
     
     for(contador2= contador; contador2 >=0 ; contador2--)
     {
-        printf("%d", contador2+1);
+        printf("%d", contador2);
     }
 }
 
-void sin_espacios(char palabra[])
+void sin_espacios(char palabra[]) 
 {
-    for(int i=0; palabra[i] != '\0';i++)
-    {
-        if(palabra[i]== ' ')
-        {
-            palabra[i]=palabra[i+1];
+    int i, j = 0;
+
+    for (i = 0; palabra[i] != '\0'; i++) {
+        if (palabra[i] != ' ') {
+            palabra[j] = palabra[i];
+            j++;
         }
-        // printf("%c", palabra[i]);
     }
+
+    palabra[j] = '\0'; // Agrega el carácter nulo al final de la cadena resultante
 }
+
 
 void comenzar_sinespacios(char palabra[])
 {
@@ -376,7 +379,14 @@ void comenzar_sinespacios(char palabra[])
             if(palabra[i] == ' ')
             {
                 printf("la cadena no puede empezar con espacios\n");
-                palabra[i]=0;
+                for(int i=0; palabra[i] != '\0';i++)
+                {
+                    if(palabra[i]== ' ')
+                    {
+                        palabra[i]=palabra[i+1];
+                    }
+                }
+                
             }
         }
         if(i==contador)
@@ -387,7 +397,7 @@ void comenzar_sinespacios(char palabra[])
                 palabra[i]=0;
             }
         }
-        printf("%c", palabra[i]);
+        // printf("%c", palabra[i]);
     }
 
     for(int i=0; palabra[i] != '\0';i++)
