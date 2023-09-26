@@ -14,7 +14,7 @@ int menu(void);
 int repetir(void);
 void validar(char []);
 
-void mayusculas(char []);
+int mayusculas(char []);
 void minusculas(char []);
 
 void fmayusculas(char []);
@@ -83,6 +83,7 @@ void msg()
 
             case 6:
             sin_espacios(palabra);
+            printf("%s", palabra);
             break;
 
             case 7:
@@ -114,55 +115,65 @@ int repetir()
 void validar(char palabra[])
 {
     // char palabra[30];
-    int i=-1, bandera=0;
+    int i=-1, bandera;
     do
     {
-        
+        bandera=0;
         printf("dame una palabra (solo letras mayusculas y/o ,minusculas) (maximo 29 letras)\n");
         fflush(stdin);
         gets(palabra);
         printf("\n");
 
-        for(int j=0, espacio=0;  palabra[i] != '\0' && espacio != 2 ; j++)
+        for(int j=0;  palabra[j] != '\0' && bandera != 1 ; j++)
         {
             i++;
             
             if(palabra[i] < 65)
             {
-                printf("valor invalido ingresa otra palabra\n");
-                bandera=1;
-                espacio=0;
-            }
-            if(palabra[i] > 64)
-            {
-                if(palabra[i] > 90)
+                if( palabra[i] == ' ')
                 {
-                    if(palabra[i] < 97)
+                    if(palabra[i+1]== ' ')
                     {
                         printf("valor invalido ingresa otra palabra\n");
-                        bandera = 1;
-                        espacio=0;
+                        bandera=1;
                     }
-                    else
+                }
+                else
+                {
+                    printf("valor invalido ingresa otra palabra\n");
+                    bandera=1;
+                }
+            }
+            else
+            {
+                if(palabra[i] > 64)
+                {
+                    if(palabra[i] > 90)
                     {
-                        if(palabra[i] > 122)
+                        if(palabra[i] < 97)
                         {
                             printf("valor invalido ingresa otra palabra\n");
                             bandera = 1;
-                            espacio=0;
+                            // espacio=0;
+                        }
+                        else
+                        {
+                            if(palabra[i] > 122)
+                            {
+                                printf("valor invalido ingresa otra palabra\n");
+                                bandera = 1;
+                                // espacio=0;
+                            }
+                            else
+                            {
+                                bandera=0;
+                            }
                         }
                     }
-                }
-            }
-            else 
-            {
-                if( palabra[i] == ' ')
-                {
-                    if(espacio == 1)
+                    else
                     {
-                        printf("valor invalido ingresa otra palabra\n");
+                        bandera=0;
                     }
-                    espacio = 1;
                 }
             }
         }
@@ -170,7 +181,7 @@ void validar(char palabra[])
     }while(bandera == 1);
 }
 
-void mayusculas(char palabra[])
+int mayusculas(char palabra[])
 {
     int i;
     for(i=0; palabra[i] != '\0'; i++)
@@ -192,8 +203,9 @@ void mayusculas(char palabra[])
                 }
             }
         }
-        printf("%c", palabra[i]);
+        // printf("%c", palabra[i]);
     }
+    return palabra;
 }
 
 void minusculas(char palabra[])
@@ -345,7 +357,7 @@ void sin_espacios(char palabra[])
         {
             palabra[i]=0;
         }
-        printf("%c", palabra[i]);
+        // printf("%c", palabra[i]);
     }
 }
 
@@ -398,44 +410,31 @@ void conjunto_cadenas(char palabra[])
     printf("\n");
 }
 
-void palindromo(char palabra[])
+void palindromo(char palabra[]) 
 {
-    for(int i=0; palabra[i] != '\0';i++)
-    {
-        if(palabra[i]== ' ')
-        {
-            palabra[i]=0;
-        }
-        // printf("%c", palabra[i]);
-    }
-    
+    sin_espacios(palabra);
     int contador;
-    for(contador=0; palabra[contador] != '\0'; contador++);
-    char palabra2[contador];
-    printf("%d\n", contador);
+    for (contador = 0; palabra[contador] != '\0'; contador++);
 
-    for(int i = contador; i>=0; i--)
-    {
-        palabra2[i] = palabra[i];
-        // printf("%c", palabra2[i]);
-    }
-
-    for (int i = 0; i < contador; i++) 
-    {
-        palabra2[i] = palabra[contador-i-1];
-    }
-    palabra2[contador] = '\0';
-
-    printf("Cadena original: %s\n", palabra);
-    printf("Cadena invertida: %s\n", palabra2);
+    int izquierda = 0, bandera = 1; // Inicializa bandera en 1 (asume que es un palíndromo)
+    int derecha = contador - 1;
     
-    if(strcmp(palabra, palabra2 )== 0)
-    {
-        printf("la cadena es un palindromo\n");
-    }
-    else
-    {
-        printf("la cadena no es un palindromo\n");
+    while (izquierda < derecha) {
+        // Convierte las letras a minúsculas antes de comparar
+        char izq = mayusculas(palabra);
+        char der = mayusculas(palabra);
+
+        if (izq != der) {
+            bandera = 0; // Si encuentra una diferencia, no es un palíndromo
+            break;
+        }
+        izquierda++;
+        derecha--;
     }
 
+    if (bandera == 1) {
+        printf("Es un palindromo\n");
+    } else {
+        printf("No es un palindromo\n");
+    }
 }
