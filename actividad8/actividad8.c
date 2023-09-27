@@ -26,15 +26,15 @@ int main()
 
 void menu()
 {
-    int op;
+    int op, n=10, n2;
     do
     {
         fflush(stdin);
         op= msg();
-        int vector1[10];
-        int vector2[10];
-        int vector3[10];
-        int matriz[3][3];
+        int vector1[n];
+        int vector2[n];
+        int vector3[n];
+        int matriz[n2][n2];
         switch(op)
         {
             case 1:
@@ -58,7 +58,7 @@ void menu()
             break;
 
             case 6:
-            imprimirMattriz(matriz[3][3]);
+            imprimirMattriz(matriz[][n2]);
             break;
         }
 
@@ -86,32 +86,32 @@ int validar(char[30], li, ls)
 
 }
 
-void vectorManual(int vector1[])
+void vectorManual(int vector1[], int n)
+{
+    
+}
+
+void vectorAleatorio(int vector2[], int n)
 {
 
 }
 
-void vectorAleatorio(int vector2[])
+void vectores(int vector1[], int vector2[], int vector3[], int n, int n2)
 {
 
 }
 
-void vectores(int vector1[], int vector2[], int vector3[])
+void imprimirVectores(int vector1[], int vector2[], int vector3[], int n, int n2)
 {
 
 }
 
-void imprimirVectores(int vector1[], int vector2[], int vector3[])
+void llenarMatriz(int vector1[], int vector2[], int matriz[][n2], int n, int n2)
 {
 
 }
 
-void llenarMatriz(int vector1[], int vector2[], int matriz[][3])
-{
-
-}
-
-void imprimirMattriz(int matriz[][3])
+void imprimirMattriz(int matriz[][n2], int n2)
 {
 
 }
