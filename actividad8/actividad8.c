@@ -1,7 +1,9 @@
-
-
-
-
+// Hernandez Ceseña Ivan Fernando  373077
+// 01/10/23
+// LLENAR VECTOR 1 (MANUALMENTE) ; LLENAR VECTOR 2 ALEATORIAMENTE  
+// LLENAR VECTOR 3 (CON VECTOR1 Y VECTOR2) ; IMPRIMIR VECTORES
+// LLENA MATRIZ 4 X 4 ; IMPRIMIR MATRIZ
+// NYP_ACT7_p2_932
 
 #include <stdio.h>
 #include <stdlib.h>
