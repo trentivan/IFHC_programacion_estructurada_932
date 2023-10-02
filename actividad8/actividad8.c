@@ -7,7 +7,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <time.h>
+
 
 void menu(void);
 int msg(void);
@@ -178,7 +179,7 @@ void imprimirMatriz(int matriz[][3], int m)
     {
         for(int j=0; j<m; j++)
         {
-            printf("[%d] ", matriz[i][j], i, j);
+            printf("[%d] ", matriz[i][j]);
         }
         printf("\n");
     }
