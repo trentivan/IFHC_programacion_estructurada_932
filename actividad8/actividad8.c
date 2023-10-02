@@ -19,8 +19,8 @@ void vectorManual(int vector1[], int n);
 void vectorAleatorio(int vector2[], int n);
 void vectores(int vector1[], int vector2[], int vector3[], int n);
 void imprimirVectores(int *vector1, int n);
-void llenarMatriz(int *vector1, int *vector2, int matriz[][3]);
-void imprimirMatriz(int matriz[][3], int m);
+void llenarMatriz(int *vector1, int *vector2, int matriz[][4]);
+void imprimirMatriz(int matriz[][4], int m);
 
 int main()
 {
@@ -153,7 +153,7 @@ void imprimirVectores(int *vector, int n)
     printf("\n");
 }
 
-void llenarMatriz(int vector1[], int vector2[], int matriz[][3])
+void llenarMatriz(int vector1[], int vector2[], int matriz[][4])
 {
     int pos=0, i, j;
     for( i=0; i<4; i++)
@@ -168,12 +168,14 @@ void llenarMatriz(int vector1[], int vector2[], int matriz[][3])
             {
                 matriz[i][j]= vector2[pos-10];
             }
+            // printf("%d ", matriz[i][j]);
             pos++;
         }
+
     }
 }
 
-void imprimirMatriz(int matriz[][3], int m)
+void imprimirMatriz(int matriz[][4], int m)
 {
     for(int i=0; i<m; i++)
     {
