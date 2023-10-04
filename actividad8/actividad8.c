@@ -40,12 +40,6 @@ void menu()
     // n=10;
     do
     {
-    //     fflush(stdin);
-    //     gets(op);
-        // int vector1[n];
-        // int vector2[n];
-        // int vector3[n+n];
-        // int matriz[3][3];
         fflush(stdin);
         op= msg();
         switch(op)
