@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-void matrizSinRepetir(int matriz[][4], int m, int n, int li, int ls)
+void matrizAleatoriaSinRepetir(int matriz[][4], int m, int n, int li, int ls)
 {
     int i, j, num;
     int rango= ls-li+1;
@@ -12,7 +12,7 @@ void matrizSinRepetir(int matriz[][4], int m, int n, int li, int ls)
     {
         printf("no se puede llenar la matriz sin repetir datos\n");
     }
-    
+
     for(i=0; i < m; i++)
     {
         for(j=0; j < n ; j++)
