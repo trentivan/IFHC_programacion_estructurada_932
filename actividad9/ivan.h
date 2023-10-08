@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-void matrizSinRepetir(int matriz[][4], int m, int n, int li, int ls)
+void matrizAleatoriaSinRepetir(int matriz[][4], int m, int n, int li, int ls)
 {
     int i, j, num;
     int rango= ls-li+1;
