@@ -3,7 +3,7 @@
 #include <time.h>
 
 
-//   funciones de matriz
+//   funciones de matriz     /////////////////////////////////////////////////////////////////////////////////////////////
 void matrizAleatoriaSinRepetir(int matriz[][4], int m, int n, int li, int ls)
 {
     int i, j, num;
@@ -61,10 +61,24 @@ void imprimirMatriz(int matriz[][4], int m, int n)
         printf("\n");
     }
 }
-// fin funciones de matriz
+// fin funciones de matriz      ///////////////////////////////////////////////////////////////////////////////////////////
 
 
-// funciones de vectores
+// funciones de vectores    //////////////////////////////////////////////////////////////////////////////////////////////
+int busquedaSecuencial(int vector[], int n, int numero)
+{
+    int i;
+
+    for(i = 0; i < n ; i++)
+    {
+        if(vector[i] == numero)
+        {
+            return i+1;
+        }
+    }
+    return -1;
+}
+
 void ordenarVectorAscendente(int vector[], int n)
 {
     int i, j, aux=0;
@@ -140,10 +154,10 @@ void imprimirVector(int vector[], int n)
     }
     printf("\n");
 }
-// fin funciones de vectores
+// fin funciones de vectores     //////////////////////////////////////////////////////////////////////////////////////
 
 
-// validaciones
+// validaciones                 ///////////////////////////////////////////////////////////////////////////////////////
 int validacionNumero(char msg[], int li, int ls)
 {
     int numero, valido;
@@ -229,4 +243,4 @@ void validacionTexto(char msg[], char cadena[], int n)
 
     }while(invalido == 1);
 }
-// fin funciones de validaciones
+// fin funciones de validaciones                     /////////////////////////////////////////////////////////////////////////
