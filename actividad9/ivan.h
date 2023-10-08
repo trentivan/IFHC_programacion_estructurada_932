@@ -101,7 +101,7 @@ void ordenarVectorDescendiente(int vector[], int n)
     }
 }
 
-void vectorSinRepetir(int vector[],int n, int li, int ls)
+void vectorAleatorioSinRepetir(int vector[],int n, int li, int ls)
 {
     
     srand(time(NULL));
