@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <time.h>
 
+
+
+
 void vectorSinRepetir(int vector[],int n, int li, int ls)
 {
     srand(time(NULL));
@@ -24,4 +27,19 @@ void vectorSinRepetir(int vector[],int n, int li, int ls)
     {
         printf("%d ", vector[i]);
     }
+}
+
+int main()
+{
+    int n=20, numero, i;
+    int vector[n];
+    int li=10, ls=20;
+    char cadena[n];
+
+    int n=10;
+    int vect[n];
+    int li=10, ls=20;
+
+    vectorSinRepetir(vect, n, li, ls);
+    return 0;
 }

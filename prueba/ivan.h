@@ -50,14 +50,14 @@ int validacionNumero(char msg[], int li, int ls)
     return numero;
 }
 
-void validacionTexto(char cadena[], int n)
+void validacionTexto(char msg[], char cadena[], int n)
 {
     int invalido=0;
     int i;
 
     do{
         invalido=0;
-        printf("Dame un texto\n");
+        printf("%s\n", msg);
         fflush(stdin);
         gets(cadena);
 
@@ -112,5 +112,4 @@ void validacionTexto(char cadena[], int n)
         }
 
     }while(invalido == 1);
-    printf("%s", cadena);
 }
