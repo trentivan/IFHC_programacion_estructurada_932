@@ -37,13 +37,13 @@ void validacionTexto(char cadena[], int n)
                     if(cadena[i] > 122)
                     {
                         invalido=1;
-                        printf("1) el texto no puede contener caracteres especiales como este que escribiste [%c]\n", cadena[i]);
+                        printf("el texto no puede contener caracteres especiales como este que escribiste [%c]\n", cadena[i]);
                     }
                 }
                 else
                 {
                     invalido=1;
-                    printf("2) el texto no puede contener caracteres especiales como este que escribiste [%c]\n", cadena[i]);
+                    printf("el texto no puede contener caracteres especiales como este que escribiste [%c]\n", cadena[i]);
                 }
             }
             else
@@ -53,7 +53,7 @@ void validacionTexto(char cadena[], int n)
                     if(cadena[i+1] == 32)
                     {
                         invalido=1;
-                        printf("3) el texto no puede contener dobles espacios\n");
+                        printf("el texto no puede contener dobles espacios\n");
                     }
                 }
                 else
@@ -61,7 +61,7 @@ void validacionTexto(char cadena[], int n)
                     if(cadena[i] < 65)
                     {
                         invalido=1;
-                        printf("4) el texto no puede contener caracteres especiales como este que escribiste [%c]\n", cadena[i]);
+                        printf("el texto no puede contener caracteres especiales como este que escribiste [%c]\n", cadena[i]);
                     }
                 }
             }

@@ -1,83 +1,89 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int validarNumero(char msg[], int li, int ls)
+int validacionNumero(char msg[], int li, int ls)
 {
-    int num;
+    int numero, valido;
     char cadena[100];
     do{
-        printf("%s", msg);
+        valido=0;
+        printf("%s\n", msg);
         fflush(stdin);
         gets(cadena);
-        num= atoi(cadena);
-    }while(num<li || num>ls);
-    return num;
+        numero= atoi(cadena);
+        if(numero < li || numero > ls)
+        {
+            printf("el numero debe estar dentro de este rango (%d-%d)\n", li, ls);
+            printf("por favor, inttroduce otro numero\n");
+            valido=1;
+        }
+
+    }while(valido==1);
+    
+    return numero;
 }
 
-void validarTexto(char palabra[])
+void validacionTexto(char cadena[], int n)
 {
-    int i=-1, bandera;
-    do
-    {
-        bandera=0;
-        printf("dame una palabra (solo letras mayusculas y/o ,minusculas) (maximo 29 letras)\n");
-        fflush(stdin);
-        gets(palabra);
-        printf("\n");
+    int invalido=0;
+    int i;
 
-        for(int j=0;  palabra[j] != '\0' && bandera != 1 ; j++)
+    do{
+        invalido=0;
+        printf("Dame un texto\n");
+        fflush(stdin);
+        gets(cadena);
+
+        for(i=0 ; cadena[i] != '\0'; i++);
+        if(i > n)
         {
-            i++;
-            
-            if(palabra[i] < 65)
+            printf("el texto escrito tiene mas de [%d] caracteres.\n", n);
+            invalido=1;
+        }
+
+        for(i=0 ; cadena[i] != '\0'; i++)
+        {
+            if(cadena[i] > 90)
             {
-                if( palabra[i] == ' ')
+                if(cadena[i] >= 97)
                 {
-                    if(palabra[i+1]== ' ')
+                    if(cadena[i] > 122)
                     {
-                        printf("valor invalido ingresa otra palabra\n");
-                        bandera=1;
+                        invalido=1;
+                        printf("el texto no puede contener caracteres especiales como este que escribiste [%c]\n", cadena[i]);
                     }
                 }
                 else
                 {
-                    printf("valor invalido ingresa otra palabra\n");
-                    bandera=1;
+                    invalido=1;
+                    printf("el texto no puede contener caracteres especiales como este que escribiste [%c]\n", cadena[i]);
                 }
             }
             else
             {
-                if(palabra[i] > 64)
+                if(cadena[i] == 32)
                 {
-                    if(palabra[i] > 90)
+                    if(cadena[i+1] == 32)
                     {
-                        if(palabra[i] < 97)
-                        {
-                            printf("valor invalido ingresa otra palabra\n");
-                            bandera = 1;
-                            // espacio=0;
-                        }
-                        else
-                        {
-                            if(palabra[i] > 122)
-                            {
-                                printf("valor invalido ingresa otra palabra\n");
-                                bandera = 1;
-                                // espacio=0;
-                            }
-                            else
-                            {
-                                bandera=0;
-                            }
-                        }
+                        invalido=1;
+                        printf("el texto no puede contener dobles espacios\n");
                     }
-                    else
+                }
+                else
+                {
+                    if(cadena[i] < 65)
                     {
-                        bandera=0;
+                        invalido=1;
+                        printf("el texto no puede contener caracteres especiales como este que escribiste [%c]\n", cadena[i]);
                     }
                 }
             }
         }
-        
-    }while(bandera == 1);
+        if(invalido==1)
+        {
+            printf("Por favor escribe otro texto.\n");
+        }
+
+    }while(invalido == 1);
+    printf("%s", cadena);
 }
