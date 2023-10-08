@@ -6,11 +6,19 @@
 
 void vectorSinRepetir(int vector[],int n, int li, int ls)
 {
+    
     srand(time(NULL));
-    int i, j;
-
-    for(i=0; i < n; i++)
+    int i=0, j;
+    if(n>(ls-li))
     {
+        printf("no se puede ejecutar si la resta del limite inferior y superior es menor al tamano de tu vector\n");
+        printf("fin de la funcion\n");
+        i=n;
+    }
+
+    for(i; i < n; i++)
+    {
+        
         int rango = ls-li+1;
         vector[i]= (rand()% rango)+li;
 
@@ -22,10 +30,8 @@ void vectorSinRepetir(int vector[],int n, int li, int ls)
             }
         }
     }
-    for(i=0; i<n; i++)
-    {
-        printf("%d ", vector[i]);
-    }
+
+    
 }
 
 int validacionNumero(char msg[], int li, int ls)
@@ -41,7 +47,7 @@ int validacionNumero(char msg[], int li, int ls)
         if(numero < li || numero > ls)
         {
             printf("el numero debe estar dentro de este rango (%d-%d)\n", li, ls);
-            printf("por favor, inttroduce otro numero\n");
+            printf("por favor, introduce otro numero\n");
             valido=1;
         }
 
@@ -50,14 +56,14 @@ int validacionNumero(char msg[], int li, int ls)
     return numero;
 }
 
-void validacionTexto(char cadena[], int n)
+void validacionTexto(char msg[], char cadena[], int n)
 {
     int invalido=0;
     int i;
 
     do{
         invalido=0;
-        printf("Dame un texto\n");
+        printf("%s\n", msg);
         fflush(stdin);
         gets(cadena);
 
@@ -112,5 +118,4 @@ void validacionTexto(char cadena[], int n)
         }
 
     }while(invalido == 1);
-    printf("%s", cadena);
 }

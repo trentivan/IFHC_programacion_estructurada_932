@@ -5,9 +5,9 @@
 
 int main()
 {
-    int n=20, numero;
+    int n=20, numero, i;
     int vector[n];
-    int li=10, ls=20;
+    int li=10, ls=50;
     char cadena[n];
 
     validacionTexto("dame un escrito de maximo 20 espacios", cadena, n);
@@ -15,5 +15,9 @@ int main()
     numero = validacionNumero("dame un numero", li, ls);
     printf("%d\n", numero);
     vectorSinRepetir(vector, n, li, ls);
+    for(i=0; i<n ;i++ )
+    {
+        printf("%d ", vector[i]);
+    }
     return 0;
 }
