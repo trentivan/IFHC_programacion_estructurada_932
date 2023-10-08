@@ -47,7 +47,3 @@ void msg()
     printf("0) terminar programa\n");
 }
 
-int validarAleatorio()
-{
-
-}

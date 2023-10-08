@@ -69,10 +69,10 @@ void vectorSinRepetir(int vector[],int n, int li, int ls)
     {
         printf("no se puede ejecutar si la resta del limite inferior y superior es menor al tamano de tu vector\n");
         printf("fin de la funcion\n");
-        i=n;
+        return 0;
     }
 
-    for(i; i < n; i++)
+    for(i=0; i < n; i++)
     {
         
         int rango = ls-li+1;
@@ -88,6 +88,16 @@ void vectorSinRepetir(int vector[],int n, int li, int ls)
     }
 
     
+}
+
+void imprimirVector(int vector[], int n)
+{
+    int i;
+    for(i=0; i<n; i++)
+    {
+        printf("[%d] ", vector[i]);
+    }
+    printf("\n");
 }
 
 int validacionNumero(char msg[], int li, int ls)
