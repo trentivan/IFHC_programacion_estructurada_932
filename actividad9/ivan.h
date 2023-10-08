@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 
+
+//   funciones de matriz
 void matrizAleatoriaSinRepetir(int matriz[][4], int m, int n, int li, int ls)
 {
     int i, j, num;
@@ -59,6 +61,45 @@ void imprimirMatriz(int matriz[][4], int m, int n)
         printf("\n");
     }
 }
+// fin funciones de matriz
+
+
+// funciones de vectores
+void ordenarVectorAscendente(int vector[], int n)
+{
+    int i, j, aux=0;
+
+    for(i=0; i<n; i++)
+    {
+        for(j=0; j<n; j++)
+        {
+            if(vector[j]>vector[i])
+            {
+                aux = vector[i];
+                vector[i] = vector[j];
+                vector[j] = aux;
+            }
+        }
+    }
+}
+
+void ordenarVectorDescendiente(int vector[], int n)
+{
+    int i, j, aux=0;
+
+    for(i=0; i<n; i++)
+    {
+        for(j=0; j<n; j++)
+        {
+            if(vector[j]<vector[i])
+            {
+                aux = vector[i];
+                vector[i] = vector[j];
+                vector[j] = aux;
+            }
+        }
+    }
+}
 
 void vectorSinRepetir(int vector[],int n, int li, int ls)
 {
@@ -99,7 +140,10 @@ void imprimirVector(int vector[], int n)
     }
     printf("\n");
 }
+// fin funciones de vectores
 
+
+// validaciones
 int validacionNumero(char msg[], int li, int ls)
 {
     int numero, valido;
@@ -185,3 +229,4 @@ void validacionTexto(char msg[], char cadena[], int n)
 
     }while(invalido == 1);
 }
+// fin funciones de validaciones

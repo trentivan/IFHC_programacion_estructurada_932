@@ -5,7 +5,7 @@
 
 
 
-void vectorSinRepetir(int vector[],int n, int li, int ls)
+void vectorAleatorioSinRepetir(int vector[],int n, int li, int ls)
 {
     srand(time(NULL));
     int i, j;
@@ -40,6 +40,6 @@ int main()
     int vect[n];
     int li=10, ls=20;
 
-    vectorSinRepetir(vect, n, li, ls);
+    vectorAleatorioSinRepetir(vect, n, li, ls);
     return 0;
 }
