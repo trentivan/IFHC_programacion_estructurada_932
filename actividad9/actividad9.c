@@ -6,7 +6,7 @@
 void menu(void);
 void msg(void);
 
-void llenarVector();
+
 
 
 int validarNumero(char msg[], int li, int ls);
@@ -20,20 +20,22 @@ int main()
 
 void menu()
 {
-    int op, n=15;
+    int op, n=15, m=4, p=4;
     int vector[n];
+    int matriz[m][p];
+    int li=100, ls=200;
     do{
         msg();
         op= validarNumero("elije unna opcion\n", 0, 6);
         switch(op)
         {
             case 1:
-            llenarVector(vector);
+            vectorSinRepetir(vector, n, li, ls);
             break;
 
             case 2:
-            llenarVector(vector);
-            break
+            matrizSinRepetir(matriz[][p], m, p,"matriz");
+            break;
         }
     }while(op!=0);
 }
@@ -45,26 +47,7 @@ void msg()
     printf("0) terminar programa\n");
 }
 
-void llenarVector(int vector[], int n)
+int validarAleatorio()
 {
-    int i, ri=100, rf= 200;
-    int rango= (rf-ri)+1, num;
 
-    for(i=0; i<n; i++)
-    {
-        num=rand()%rango;
-        vector[i]= num;
-        printf("%d ", vector[i]);
-    }
-    printf("\n");
-}
-
-void imprimirVector(int vector[], int n)
-{
-    int i;
-    for(i=0; i<n; i++)
-    {
-        printf("%d ", vector[i]);
-    }
-    printf("\n");
 }
