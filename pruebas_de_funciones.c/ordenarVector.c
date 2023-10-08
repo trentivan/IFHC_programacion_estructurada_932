@@ -71,7 +71,7 @@ void imprimirVector(int vector[], int n)
 
 int main()
 {
-    int n=10;
+    int n=20;
     int vec[n];
     int li=10, ls=50;
 

@@ -21,7 +21,7 @@ void matrizAleatoriaSinRepetir(int matriz[][4], int m, int n, int li, int ls)
 
                 num = (rand()%rango) + li;
 
-            }while(existeMatriz(matriz, m, n, num) == 1);
+            }while(existeMatriz(matriz, m, n, num) != -1);
 
             matriz[i][j]= num;
             
@@ -40,11 +40,11 @@ int existeMatriz(int matriz[][4], int  m, int n, int num)
         {
             if(num == matriz[i][j])
             {
-                return 1;
+                return i;
             }
         }
     }
-    return 0;
+    return -1;
 }
 
 void imprimirMatriz(int matriz[][4], int m, int n)
@@ -66,7 +66,7 @@ int main()
     int matriz[m][n];
     int li=1, ls=20;
 
-    matrizSinRepetir(matriz, m, n, li, ls);
+    matrizAleatoriaSinRepetir(matriz, m, n, li, ls);
     imprimirMatriz(matriz, m, n);
     return 0;
 }

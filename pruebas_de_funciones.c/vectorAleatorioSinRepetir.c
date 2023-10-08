@@ -8,20 +8,16 @@
 void vectorAleatorioSinRepetir(int vector[],int n, int li, int ls)
 {
     srand(time(NULL));
-    int i, j;
+    int i, num;
+    int rango = ls-li+1;
 
     for(i=0; i < n; i++)
     {
-        int rango = ls-li+1;
-        vector[i]= (rand()% rango)+li;
+        do{
+            num = (rand()% rango)+li;
 
-        for(j=0; j<i; j++)
-        {
-            if(vector[i]==vector[j])
-            {
-                i--;
-            }
-        }
+        }while(busquedaSecuencial(vector, n, num) != -1);
+        vector[i] = num;
     }
     for(i=0; i<n; i++)
     {
@@ -29,17 +25,26 @@ void vectorAleatorioSinRepetir(int vector[],int n, int li, int ls)
     }
 }
 
+int busquedaSecuencial(int vector[], int n, int numero)
+{
+    int i;
+
+    for(i = 0; i < n ; i++)
+    {
+        if(vector[i] == numero)
+        {
+            return i+1;
+        }
+    }
+    return -1;
+}
+
 int main()
 {
-    int n=20, numero, i;
+    int n=20;
     int vector[n];
-    int li=10, ls=20;
-    char cadena[n];
+    int li=10, ls=31;
 
-    int n=10;
-    int vect[n];
-    int li=10, ls=20;
-
-    vectorAleatorioSinRepetir(vect, n, li, ls);
+    vectorAleatorioSinRepetir(vector, n, li, ls);
     return 0;
 }
