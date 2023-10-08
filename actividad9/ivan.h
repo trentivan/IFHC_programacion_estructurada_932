@@ -117,32 +117,22 @@ void ordenarVectorDescendiente(int vector[], int n)
 
 void vectorAleatorioSinRepetir(int vector[],int n, int li, int ls)
 {
-    
     srand(time(NULL));
-    int i=0, j;
-    if(n>(ls-li))
-    {
-        printf("no se puede ejecutar si la resta del limite inferior y superior es menor al tamano de tu vector\n");
-        printf("fin de la funcion\n");
-        return 0;
-    }
+    int i, num;
+    int rango = ls-li+1;
 
     for(i=0; i < n; i++)
     {
-        
-        int rango = ls-li+1;
-        vector[i]= (rand()% rango)+li;
+        do{
+            num = (rand()% rango)+li;
 
-        for(j=0; j<i; j++)
-        {
-            if(vector[i]==vector[j])
-            {
-                i--;
-            }
-        }
+        }while(busquedaSecuencial(vector, n, num) != -1);
+        vector[i] = num;
     }
-
-    
+    for(i=0; i<n; i++)
+    {
+        printf("%d ", vector[i]);
+    }
 }
 
 void imprimirVector(int vector[], int n)
