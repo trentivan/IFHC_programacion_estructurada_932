@@ -77,8 +77,10 @@ int main()
 
     vectorSinRepetir(vec, n, li, ls);
     ordenarVectorAscendente(vec, n);
+    printf("ascendente\n");
     imprimirVector(vec, n);
     ordenarVectorDescendiente(vec, n);
+    printf("descente\n");
     imprimirVector(vec, n);
 
     return 0;
