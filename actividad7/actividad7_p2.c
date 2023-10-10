@@ -287,35 +287,34 @@ void fminusculas(char palabra[])
 
 void capital(char palabra[])
 {
-    int convertir;
+    // int convertir=0;
     minusculas(palabra);
 
-    for(int i=0; palabra[i] != '\0'; i++)
-    {
-        convertir=0;
-        if(convertir==1)
-        {
-            if(palabra[i]>='a')
-            {
-                if(palabra[i]<= 'z')
-                {
-                    palabra[i]= palabra[i]-32;
-                }
-            }
-            if(palabra[i] >= 'A')
-            {
-                if(palabra[i] <= 'Z')
-                {
-                    palabra[i]= palabra[i] + 32;
-                }
-                convertir = 0;
-            }
-        }
-        else
-        {
-            convertir=1;
-        }
-    }
+    // for(int i=0; palabra[i] != '\0'; i++)
+    // {
+    //     if(convertir==1)
+    //     {
+    //         if(palabra[i]>='a')
+    //         {
+    //             if(palabra[i]<= 'z')
+    //             {
+    //                 palabra[i]= palabra[i]-32;
+    //             }
+    //         }
+    //         if(palabra[i] >= 'A')
+    //         {
+    //             if(palabra[i] <= 'Z')
+    //             {
+    //                 palabra[i]= palabra[i] + 32;
+    //             }
+    //             convertir = 0;
+    //         }
+    //     }
+    //     else
+    //     {
+    //         convertir=1;
+    //     }
+    // }
 
     for(int i=0; palabra[i] != '\0';i++)
     {
