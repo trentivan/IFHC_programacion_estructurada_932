@@ -287,11 +287,12 @@ void fminusculas(char palabra[])
 
 void capital(char palabra[])
 {
-    int convertir=0;
+    int convertir;
     minusculas(palabra);
 
     for(int i=0; palabra[i] != '\0'; i++)
     {
+        convertir=0;
         if(convertir==1)
         {
             if(palabra[i]>='a')
