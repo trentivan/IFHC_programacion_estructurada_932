@@ -113,8 +113,6 @@ void vectorManual(int vector1[], int n)
     int num;
     for(int i=0; i<n; i++)
     {
-        // printf( "dame un numero entre 30 y 70: \n");
-
         vector1[i]= num=validar("dame un numero entre 30 y 70\n", 30, 70);
     }
 }

@@ -30,19 +30,22 @@ void matrizAleatoriaSinRepetir(int matriz[][4], int m, int n, int li, int ls)
     int i, j, num;
     int rango= ls-li+1;
     srand(time(NULL));
-
+    printf("hola1\n");
     if(m*n > rango)
     {
         printf("no se puede llenar la matriz sin repetir datos\n");
     }
-
+    printf("m= %d n= %d\n", m, n);
     for(i=0; i < m; i++)
     {
+        printf("i= %d\n", i);
         for(j=0; j < n ; j++)
         {
+            printf("j= %d\n", i);
             do{
 
                 num = (rand()%rango) + li;
+                printf("%d\n", num);
                 
 
             }while(existeMatriz(matriz, m, n, num) != -1);
@@ -52,6 +55,7 @@ void matrizAleatoriaSinRepetir(int matriz[][4], int m, int n, int li, int ls)
         }
         
     }
+    printf("hola2\n");
     
 }
 

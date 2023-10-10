@@ -127,7 +127,7 @@ void validar(char palabra[])
         for(int j=0;  palabra[j] != '\0' && bandera != 1 ; j++)
         {
             i++;
-            
+            bandera=0;
             if(palabra[i] < 65)
             {
                 if( palabra[i] == ' ')
@@ -271,16 +271,16 @@ void fminusculas(char palabra[])
                 palabra[i]= palabra[i] + 32;
             }
         }
-        else
-        {
-            if(palabra[i] >= 'a')
-            {
-                if(palabra[i] <= 'a')
-                {
-                    palabra[i]=palabra[i];
-                }
-            }
-        }
+        // else
+        // {
+        //     if(palabra[i] >= 'a')
+        //     {
+        //         if(palabra[i] <= 'a')
+        //         {
+        //             palabra[i]=palabra[i];
+        //         }
+        //     }
+        // }
         printf("%c", palabra[i]);
     }
 }
