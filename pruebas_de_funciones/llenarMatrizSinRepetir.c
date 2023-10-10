@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
+int existeMatriz(int matriz[][4], int  m, int n, int num);
 int validacionNumero(char msg[], int li, int ls)
 {
     int numero, valido;

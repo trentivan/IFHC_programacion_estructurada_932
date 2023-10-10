@@ -224,7 +224,7 @@ void minusculas(char palabra[])
         {
             if(palabra[i] >= 'a')
             {
-                if(palabra[i] <= 'a')
+                if(palabra[i] <= 'z')
                 {
                     palabra[i]=palabra[i];
                 }
