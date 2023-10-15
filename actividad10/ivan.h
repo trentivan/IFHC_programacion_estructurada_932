@@ -1,5 +1,5 @@
 // Hernandez Ceseña Ivan Fernando  373077
-// 08/10/23 /  10/10/23
+// 08/10/23 /  10/10/23 / 14/10/23
 // LLENAR VECTOR ALEATORIAMENTE SIN REPETIR VALORES ( RANGO 1-16)  
 // LLENAR MATRIZ ALEATORIAMENTE SIN REPETIR VALORES (RANGO 100-200)
 // IMPRIMIR VECTORES Y MATRICES ; ORDENAR VECTOR Y BUSCAR VALOR EN VECTOR
@@ -9,60 +9,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 
-typedef struct _alumnos{
-    int status;
-    int matricula;
-    char apellidoPaterno[30];
-    char apellidoMaterno[30];
-    char nombre[30];
-    int edad;
-    int sexo; } Talumnos;
-
-
-/*void matrizAleatoriaSinRepetir(int matriz[][4], int m, int n, int li, int ls)
-{
-    int i, j, num;
-    int rango= ls-li+1;
-    srand(time(NULL));
-
-    if(m*n > rango)
-    {
-        printf("no se puede llenar la matriz sin repetir datos\n");
-    }
-
-    for(i=0; i < m; i++)
-    {
-        for(j=0; j < n ; j++)
-        {
-            do{
-                num = (rand()%rango) + li;
-
-            }while(existeMatriz(matriz, m, n, num) != -1);
-
-            matriz[i][j]= num;
-            
-        }
-        
-    }
-    
-}
-
-int existeMatriz(int matriz[][4], int  m, int n, int num)
-{
-    int i,j;
-    for(i=0; i<m; i++)
-    {
-        for(j=0; j<n; j++)
-        {
-            if(num == matriz[i][j])
-            {
-                return i;
-            }
-        }
-    }
-    return -1;
-}*/
 //   funciones de matriz     /////////////////////////////////////////////////////////////////////////////////////////////
 
 void imprimirMatriz(int matriz[][4], int m, int n, char nombre[]) // funcion para imprimir nuestra matriz

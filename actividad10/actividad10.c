@@ -10,13 +10,30 @@
 #include <time.h>
 #include "ivan.h"
 
+typedef struct _alumnos{
+    int status;
+    int matricula;
+    char apellidoPaterno[30];
+    char apellidoMaterno[30];
+    char nombre[30];
+    int edad;
+    int sexo; } Talumns;
+
+
 void menu(void);
 void msg(void);
 
+void registro(Talumns reg[], int i);
+void sexo(Talumns reg[], int i, int li, int ls);
+void status(Talumns reg[], int i);
+void matricula(Talumns reg[], int li, int ls, int i);
+void apellido(Talumns reg[], int i);
+void nombre(Talumns reg[], int i);
+// void nombres(Talumns reg[], int i);
+
 int main()
 {
-    Talumnos vector[10];
-
+    srand(time(NULL));
     menu();
 }
 
@@ -24,6 +41,7 @@ int main()
 
 void msg()  //  aqui se muestran todas las opciones 
 {
+    system("cls");
     printf("MENU\n");
     printf("1) agregar automaticamente registros.\n");
     printf("2) agregar manualmente.\n");
@@ -36,11 +54,9 @@ void msg()  //  aqui se muestran todas las opciones
 
 void menu()  // funcion menu
 {
-    int op, n=15, m=4, p=4;  // [op] que controla el switch, las demas variables definen tamano de vector y matriz 
-    int vector[n];  // declaracion de vector
-    int matriz[m][p];  // declaracion de matriz
-    int li, ls;   // limite inferior [li], limite superior [ls]
-    int buscar, num;   // variables para el caso 6
+    int op;
+    int n=50, i=0;
+    Talumns reg[n];
     
     //  ciclo do while que controla el caso a ejecutar con ayuda de [op]
     do{
@@ -49,49 +65,153 @@ void menu()  // funcion menu
         switch(op)
         {
             case 1:
-            li=100, ls=200;
-            vectorAleatorioSinRepetir(vector, n, li, ls);
-            break;
-
-            case 2:
-            li=1, ls=16;
-            matrizAleatoria(matriz, m, p, li, ls);
-            break;
-
-            case 3:
-            imprimirVector(vector, n, "vector de numeros sin repetir");
-            break;
-
-            case 4:
-            imprimirMatriz(matriz, m, p, "matriz de numeros sin repetir");
-            break;
-
-            case 5:
-            ordenarVectorAscendente(vector, n);
-            for(int i=0; i < n; i++)
+            if((i + 10) > n)
             {
-                printf("%d ", vector[i]);
-            }
-            printf("\n");
-            break;
-
-            case 6:
-            li=100, ls=200;
-
-            imprimirVector(vector, n, "busqueda de numero en vector");
-            num = validacionNumero("dame el numero a buscar en el vector", li, ls);
-            buscar = busquedaSecuencial(vector, n, num);
-
-            if(buscar != -1)
-            {
-                printf("el numero %d se encuentra en la posicion %d\n", num, buscar);
+                printf("el registro esta lleno. No permite llenar 10 espacios\n");
             }
             else
             {
-                printf("el numero no se encuentra en el vector\n");
+                printf("llenado de 10 registros exitoso\n");
+                registro(reg, i);
+                i= i +10;
             }
+            break;
+
+            case 2:
+            
+            break;
+
+            case 3:
+
+            break;
+
+            case 4:
+            
+            break;
+
+            case 5:
+            
+            
+            break;
+
+            case 6:
+            
             break;
 
         } 
     }while(op!=0);  //  condicion  que evalua si op [0] termina el programa
+}
+
+void registro(Talumns reg[], int i)
+{
+    system("cls");
+    // int i, li, ls;
+    int li, ls, n=10;
+    // Talumnos reg[n];
+    printf("%3s %6s %6s %10s %20s %20s %30s\n", "No.", "sexo", "status", "matricula", "apellido paterno", "apellido materno", "nombre");
+    for(i=0; i<n; i++)
+    {
+        // nombres(reg, i);
+        li=1, ls=2;
+        printf("%3d", i+1);
+        sexo(reg, i, li, ls);
+        printf("%6d", reg[i].sexo);
+        status(reg, i);
+        printf(" %6d", reg[i].status);
+        li=300000;
+        ls=399999;
+        matricula(reg, li, ls, i);
+        printf(" %10d", reg[i].matricula);
+        li= 1, ls= 50;
+        apellido(reg, i);
+        printf(" %20s", reg[i].apellidoPaterno);
+        apellido(reg, i);
+        printf(" %20s", reg[i].apellidoPaterno);
+        nombre(reg, i);
+        printf("%30s", reg[i].nombre);
+        // edad();
+        
+        printf("\n");
+    }
+    system("pause");
+}
+
+void sexo(Talumns reg[], int i, int li, int ls)
+{
+    int sexo;
+    sexo= (rand()%ls) +li;
+    reg[i].sexo = sexo;
+}
+
+void status(Talumns reg[], int i)
+{
+    int estado;
+    estado= ((rand()%2) +1)-1;
+    reg[i].status = estado;
+}
+
+void matricula(Talumns reg[], int li, int ls, int i)
+{
+    int matricula, rango= (ls-li) +1;;
+    matricula=rand()% rango + li;
+    reg[i].matricula = matricula;
+}
+
+void apellido(Talumns reg[], int i)
+{
+    int numero;
+    char apellidos[100][20] = {
+    "Gonzalez", "Rodriguez", "Lopez", "Martinez", "Perez",
+    "Gomez", "Sanchez", "Fernandez", "Ramirez", "Torres",
+    "Diaz", "Hernandez", "Vargas", "Morales", "Castillo",
+    "Ortega", "Mendoza", "Cruz", "Ruiz", "Flores",
+    "Rivera", "Gutierrez", "Rios", "Navarro", "Salazar",
+    "Acosta", "Silva", "Mora", "Guerrero", "Campos",
+    "Delgado", "Vega", "Guerra", "Aguilar", "Suarez",
+    "Rojas", "Salas", "Paredes", "Cabrera", "Ponce",
+    "Valenzuela", "Miranda", "Lara", "Solis", "Villanueva",
+    "Luna", "Figueroa", "Munoz", "Barrios", "Jimenez",
+    "Bustos", "Nunez", "Zuniga", "Leal", "Chavez",
+    "Medina", "Parra", "Baez", "Navarrete", "Avila",
+    "Velasquez", "Fuentes", "Soto", "Contreras", "Caceres",
+    "Venegas", "Riquelme", "Araya", "Toledo", "Sepulveda",
+    "Reyes", "Andrade", "Villegas", "Castro", "Duran",
+    "Espinoza", "Araneda", "Lagos", "Poblete", "Becerra",
+    "Martin", "Romero", "Fernando", "Torres", "Gutierrez",
+    "Alvarez", "Pereira", "Ruiz", "Vidal", "Moron",
+    "Chacon", "Soto", "Barreto", "Camacho", "Lira",
+    "Caceres", "Palma", "Silvestre", "Mieres", "Garrido"
+    };
+
+    numero = (rand()%99) +1;
+    strcpy(reg[i].apellidoPaterno, apellidos[numero]);
+}
+
+void nombre(Talumns reg[], int i)
+{
+    int numero;
+    char nombres[50][20] = {
+    "Juan", "Carlos", "Miguel", "Andres", "Luis",
+    "Fernando", "Pedro", "Javier", "Diego", "Ricardo",
+    "Sergio", "Alejandro", "Hector", "Jose", "Martin",
+    "Raul", "Gustavo", "Pablo", "Roberto", "Antonio",
+    "Manuel", "Angel", "Jorge", "Felix", "Lucas",
+    "Pascual", "Benjamin", "Alvaro", "Arturo", "Adrian",
+    "Cesar", "Enrique", "Felipe", "Gerardo", "Ivan",
+    "Nestor", "Oliver", "Paco", "Quirino", "Samuel",
+    "Tomas", "Ulises", "Vicente", "William", "Xavier",
+    "Yago", "Zacarias", "Abel", "Bartolome"
+    };
+
+    numero = (rand()%49) +1;
+    strcpy(reg[i].nombre, nombres[numero]);
+}
+
+llenarManual(Talumns reg[], int i)
+{
+    int mat;
+    char paterno[20];
+    reg[i].status= ((rand()%2)+1)-1;
+    mat= validacionNumero("dame tu matricula", 300000, 399999);
+    = validacionTexto("dame tu apellido paterno", paterno, 20)
 }

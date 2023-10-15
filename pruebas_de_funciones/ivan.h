@@ -9,60 +9,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
-typedef struct _alumnos{
-    int status;
-    int matricula;
-    char apellidoPaterno[30];
-    char apellidoMaterno[30];
-    char nombre[30];
-    int edad;
-    int sexo; } Talumnos;
+#include <string.h>
 
 
-/*void matrizAleatoriaSinRepetir(int matriz[][4], int m, int n, int li, int ls)
-{
-    int i, j, num;
-    int rango= ls-li+1;
-    srand(time(NULL));
 
-    if(m*n > rango)
-    {
-        printf("no se puede llenar la matriz sin repetir datos\n");
-    }
 
-    for(i=0; i < m; i++)
-    {
-        for(j=0; j < n ; j++)
-        {
-            do{
-                num = (rand()%rango) + li;
-
-            }while(existeMatriz(matriz, m, n, num) != -1);
-
-            matriz[i][j]= num;
-            
-        }
-        
-    }
-    
-}
-
-int existeMatriz(int matriz[][4], int  m, int n, int num)
-{
-    int i,j;
-    for(i=0; i<m; i++)
-    {
-        for(j=0; j<n; j++)
-        {
-            if(num == matriz[i][j])
-            {
-                return i;
-            }
-        }
-    }
-    return -1;
-}*/
 //   funciones de matriz     /////////////////////////////////////////////////////////////////////////////////////////////
 
 void imprimirMatriz(int matriz[][4], int m, int n, char nombre[]) // funcion para imprimir nuestra matriz
