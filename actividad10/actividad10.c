@@ -76,7 +76,7 @@ void menu()  // funcion menu
         switch(op)
         {
             case 1:
-            if((posicion + 10) > n)
+            if((posicion + 50) > n)
             {
                 printf("el registro esta lleno. No permite llenar 10 espacios\n");
             }
@@ -84,8 +84,8 @@ void menu()  // funcion menu
             {
                 registroAleatorio(reg, posicion);
                 imprimirAleatorio(reg, posicion);
-                printf("llenado de 100 registros exitoso\n");
-                posicion= posicion+100;
+                printf("llenado de 50 registros exitoso\n");
+                posicion= posicion+50;
             }
             break;
 
@@ -138,7 +138,7 @@ void imprimirAleatorio(Talumns reg[], int posicion)
 {
     int i;
     printf("%3s %6s %10s %20s %20s %20s %8s\n", "No.", "status", "matricula", "apellido paterno", "apellido materno", "nombre", "sexo");
-    for(i=posicion; i < posicion + 100; i++)
+    for(i=posicion; i < posicion + 50; i++)
     {
         printf("%3d %6d %10d %20s %20s %20s", i+1, reg[i].status, reg[i].matricula, reg[i].apellidoPaterno, reg[i].apellidoMaterno, reg[i].nombre);
         if(reg[i].sexo == 1)
@@ -192,7 +192,7 @@ void registroAleatorio(Talumns reg[], int posicion)
 {
     int li, ls, i;
 
-    for(i=posicion; i < posicion +100; i++)
+    for(i=posicion; i < posicion +50; i++)
     {
         li=1, ls=2;
         sexo(reg, i, li, ls);
@@ -353,12 +353,16 @@ void alumnoManual(Talumns reg[], int posicion)
         printf("la matricula ya existe.\npor favor introduce otra\n");
     }
     }while(existe != -1);
+
     validacionTexto("dame tu apellido paterno", paterno, 20);
     strcpy(reg[posicion].apellidoPaterno, paterno);
+
     validacionTexto("dame tu apellido paterno", materno, 20);
     strcpy(reg[posicion].apellidoMaterno, materno);
+
     validacionTexto("dame tu nombre", nombre, 20);
     strcpy(reg[posicion].nombre, nombre);
+
     reg[posicion].edad = validacionNumero("dame tu edad", 17, 50);
     reg[posicion].sexo = validacionNumero("dame tu sexo (1- hombre. 2- mujer)", 1, 2);
 }
@@ -430,17 +434,17 @@ void imprimirRegistro(Talumns reg[], int posicion)
 
 void ordenarAscendente(Talumns reg[], int n)
 {
-    int i, j, aux=0;    
-
+    int i, j;    
+    Talumns aux;
     for(i=0; i<n; i++)  
     {
         for(j=i+1; j<n; j++)   
         {
             if(reg[j].matricula <reg[i].matricula)   
             {
-                aux = reg[i].matricula;         
-                reg[i].matricula = reg[j].matricula;
-                reg[j].matricula = aux;
+                aux = reg[i];         
+                reg[i] = reg[j];
+                reg[j] = aux;
             }
         }
     }
