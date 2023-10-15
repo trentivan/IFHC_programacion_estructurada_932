@@ -27,8 +27,11 @@ void registro(Talumns reg[], int i);
 void sexo(Talumns reg[], int i, int li, int ls);
 void status(Talumns reg[], int i);
 void matricula(Talumns reg[], int li, int ls, int i);
-void apellido(Talumns reg[], int i);
+void apellidoPaterno(Talumns reg[], int i);
+void apellidoMaterno(Talumns reg[], int i);
 void nombre(Talumns reg[], int i);
+void edad(Talumns reg[], int i, int li, int ls);
+void llenarManual(Talumns reg[], int i);
 // void nombres(Talumns reg[], int i);
 
 int main()
@@ -41,7 +44,7 @@ int main()
 
 void msg()  //  aqui se muestran todas las opciones 
 {
-    system("cls");
+    // system("cls");
     printf("MENU\n");
     printf("1) agregar automaticamente registros.\n");
     printf("2) agregar manualmente.\n");
@@ -78,7 +81,9 @@ void menu()  // funcion menu
             break;
 
             case 2:
-            
+            llenarManual(reg, i);
+            printf("%3s %6s %6s %10s %20s %20s %30s\n", "No.", "sexo", "status", "matricula", "apellido paterno", "apellido materno", "nombre");
+
             break;
 
             case 3:
@@ -108,7 +113,7 @@ void registro(Talumns reg[], int i)
     // int i, li, ls;
     int li, ls, n=10;
     // Talumnos reg[n];
-    printf("%3s %6s %6s %10s %20s %20s %30s\n", "No.", "sexo", "status", "matricula", "apellido paterno", "apellido materno", "nombre");
+    printf("%3s %6s %6s %10s %20s %20s %30s %4s\n", "No.", "sexo", "status", "matricula", "apellido paterno", "apellido materno", "nombre", "edad");
     for(i=0; i<n; i++)
     {
         // nombres(reg, i);
@@ -123,13 +128,15 @@ void registro(Talumns reg[], int i)
         matricula(reg, li, ls, i);
         printf(" %10d", reg[i].matricula);
         li= 1, ls= 50;
-        apellido(reg, i);
+        apellidoPaterno(reg, i);
         printf(" %20s", reg[i].apellidoPaterno);
-        apellido(reg, i);
-        printf(" %20s", reg[i].apellidoPaterno);
+        apellidoMaterno(reg, i);
+        printf(" %20s", reg[i].apellidoMaterno);
         nombre(reg, i);
-        printf("%30s", reg[i].nombre);
-        // edad();
+        printf(" %30s", reg[i].nombre);
+        li=17, ls=50;
+        edad(reg, i, li, ls);
+        printf("%4d", reg[i].edad);
         
         printf("\n");
     }
@@ -157,7 +164,7 @@ void matricula(Talumns reg[], int li, int ls, int i)
     reg[i].matricula = matricula;
 }
 
-void apellido(Talumns reg[], int i)
+void apellidoPaterno(Talumns reg[], int i)
 {
     int numero;
     char apellidos[100][20] = {
@@ -187,6 +194,36 @@ void apellido(Talumns reg[], int i)
     strcpy(reg[i].apellidoPaterno, apellidos[numero]);
 }
 
+void apellidoMaterno(Talumns reg[], int i)
+{
+    int numero;
+    char apellidos[100][20] = {
+    "Gonzalez", "Rodriguez", "Lopez", "Martinez", "Perez",
+    "Gomez", "Sanchez", "Fernandez", "Ramirez", "Torres",
+    "Diaz", "Hernandez", "Vargas", "Morales", "Castillo",
+    "Ortega", "Mendoza", "Cruz", "Ruiz", "Flores",
+    "Rivera", "Gutierrez", "Rios", "Navarro", "Salazar",
+    "Acosta", "Silva", "Mora", "Guerrero", "Campos",
+    "Delgado", "Vega", "Guerra", "Aguilar", "Suarez",
+    "Rojas", "Salas", "Paredes", "Cabrera", "Ponce",
+    "Valenzuela", "Miranda", "Lara", "Solis", "Villanueva",
+    "Luna", "Figueroa", "Munoz", "Barrios", "Jimenez",
+    "Bustos", "Nunez", "Zuniga", "Leal", "Chavez",
+    "Medina", "Parra", "Baez", "Navarrete", "Avila",
+    "Velasquez", "Fuentes", "Soto", "Contreras", "Caceres",
+    "Venegas", "Riquelme", "Araya", "Toledo", "Sepulveda",
+    "Reyes", "Andrade", "Villegas", "Castro", "Duran",
+    "Espinoza", "Araneda", "Lagos", "Poblete", "Becerra",
+    "Martin", "Romero", "Fernando", "Torres", "Gutierrez",
+    "Alvarez", "Pereira", "Ruiz", "Vidal", "Moron",
+    "Chacon", "Soto", "Barreto", "Camacho", "Lira",
+    "Caceres", "Palma", "Silvestre", "Mieres", "Garrido"
+    };
+
+    numero = (rand()%99) +1;
+    strcpy(reg[i].apellidoMaterno, apellidos[numero]);
+}
+
 void nombre(Talumns reg[], int i)
 {
     int numero;
@@ -200,18 +237,27 @@ void nombre(Talumns reg[], int i)
     "Cesar", "Enrique", "Felipe", "Gerardo", "Ivan",
     "Nestor", "Oliver", "Paco", "Quirino", "Samuel",
     "Tomas", "Ulises", "Vicente", "William", "Xavier",
-    "Yago", "Zacarias", "Abel", "Bartolome"
+    "Yago", "Zacarias", "Abel", "Bartolome", "Marco"
     };
 
     numero = (rand()%49) +1;
     strcpy(reg[i].nombre, nombres[numero]);
 }
 
-llenarManual(Talumns reg[], int i)
+void edad(Talumns reg[], int i, int li, int ls)
 {
-    int mat;
+    int rango= (ls-li)+1;
+    reg[i].edad = (rand()%rango)+li;
+}
+
+void llenarManual(Talumns reg[], int i)
+{
     char paterno[20];
+    char materno[20];
     reg[i].status= ((rand()%2)+1)-1;
-    mat= validacionNumero("dame tu matricula", 300000, 399999);
-    = validacionTexto("dame tu apellido paterno", paterno, 20)
+    reg[i].matricula = validacionNumero("dame tu matricula", 300000, 399999);
+    validacionTexto("dame tu apellido paterno", paterno, 20);
+    strcpy(reg[i].apellidoPaterno, paterno);
+    validacionTexto("dame tu apellido paterno", materno, 20);
+    strcpy(reg[i].apellidoMaterno, materno);
 }
