@@ -24,6 +24,7 @@ void msg(void);
 
 void registroAleatorio(Talumns reg[], int i, int numero);
 void imprimirAleatorio(Talumns reg[], int posicion, int n);
+void imprimirUnAlumno(Talumns reg[], int posicion);
 void sexo(Talumns reg[], int i, int li, int ls);
 void status(Talumns reg[], int i);
 void matricula(Talumns reg[], int li, int ls, int i);
@@ -94,19 +95,8 @@ void menu()
             else
             {
                 alumnoManual(reg, posicion);
-                printf("%3s %6s %10s %20s %20s %20s %8s\n", "No.", "status", "matricula", "apellido paterno", "apellido materno", "nombre", "sexo");
-                printf("%3d %6d %10d %20s %20s %20s", posicion+1, reg[posicion].status, reg[posicion].matricula, reg[posicion].apellidoPaterno, reg[posicion].apellidoMaterno, reg[posicion].nombre);
-                if(reg[posicion].sexo == 1)
-                {
-                    printf(" %8s\n", "Hombre");
-                    posicion= posicion+1;
-                }
-                else
-                {
-                    printf(" %8s\n", "Mujer");
-                    posicion= posicion+1;
-                }
-                bandera = 0;
+                imprimirUnAlumno(reg, posicion);
+                posicion= posicion+1;
             }
             break;
 
@@ -157,11 +147,11 @@ void imprimirUnAlumno(Talumns reg[], int posicion)
     printf("%3d %6d %10d %20s %20s %20s", posicion+1, reg[posicion].status, reg[posicion].matricula, reg[posicion].apellidoPaterno, reg[posicion].apellidoMaterno, reg[posicion].nombre);
     if(reg[posicion].sexo == 1)
     {
-        printf(" %8s\n", "Hombre");
+        printf(" %8s\n", "HOMBRE");
     }
     else
     {
-        printf(" %8s\n", "Mujer");
+        printf(" %8s\n", "MUJER");
     }
 }
 
@@ -421,11 +411,11 @@ void imprimirRegistro(Talumns reg[], int posicion)
             printf("%3d %6d %10d %20s %20s %20s %4d", i+1, reg[i].status, reg[i].matricula, reg[i].apellidoPaterno, reg[i].apellidoMaterno, reg[i].nombre, reg[i].edad);
             if(reg[i].sexo == 1)
             {
-                printf(" %8s\n", "Hombre");
+                printf(" %8s\n", "HOMBRE");
             }
             else
             {
-                printf(" %8s\n", "Mujer");
+                printf(" %8s\n", "MUJER");
             }
         }
     }

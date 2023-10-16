@@ -166,7 +166,7 @@ void mayusculas(char palabra[])
 
 void validacionTexto(char msg[], char cadena[], int n)  // funcion para validar texto
 {
-    int invalido=0;  // bandera
+    int invalido=0, contador=0;  // bandera
     int i;  //  indice
     do{
         invalido=0;  // inicializa bandera
@@ -182,8 +182,9 @@ void validacionTexto(char msg[], char cadena[], int n)  // funcion para validar 
             invalido=1;
         }
 
-        for(i=0 ; cadena[i] != '\0'; i++)
+        for(i=0 ; cadena[i] != '\0'; i++, contador++)
         {
+            
             if(cadena[i] > 90)  // si se cumple cualquier conjunto de condiciones se activa la bandera y se muestra los mensajes.
             {
                 if(cadena[i] >= 97)
@@ -219,6 +220,16 @@ void validacionTexto(char msg[], char cadena[], int n)  // funcion para validar 
                     }
                 }
             }
+        }
+        if (cadena[0] == ' ')
+        {
+            invalido=1;
+            printf("no se puede tener espacios al inicio del texto\n");
+        }
+        if(cadena[contador-1] == ' ')
+        {
+            invalido=1;
+            printf("no se puede tener espacios al final del texto\n");
         }
         if(invalido==1)
         {
