@@ -203,7 +203,6 @@ int mayusculas(char palabra[])
                 }
             }
         }
-        // printf("%c", palabra[i]);
     }
     return palabra;
 }

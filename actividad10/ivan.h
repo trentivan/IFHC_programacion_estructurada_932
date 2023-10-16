@@ -11,6 +11,8 @@
 #include <time.h>
 #include <string.h>
 
+
+
 //   funciones de matriz     /////////////////////////////////////////////////////////////////////////////////////////////
 
 void imprimirMatriz(int matriz[][4], int m, int n, char nombre[]) // funcion para imprimir nuestra matriz
@@ -137,16 +139,41 @@ int validacionNumero(char msg[], int li, int ls)  // funcion para que solo se ac
     return numero;  // si el numero cumple con los requisitos se retorna el mismo
 }
 
+void mayusculas(char palabra[])
+{
+    int i;
+    for(i=0; palabra[i] != '\0'; i++)
+    {
+        if(palabra[i] >= 'a')
+        {
+            if(palabra[i] <= 'z')
+            {
+                palabra[i]= palabra[i] - 32;
+            }
+        }
+        else
+        {
+            if(palabra[i] >= 'A')
+            {
+                if(palabra[i] <= 'Z')
+                {
+                    palabra[i]=palabra[i];
+                }
+            }
+        }
+    }
+}
+
 void validacionTexto(char msg[], char cadena[], int n)  // funcion para validar texto
 {
     int invalido=0;  // bandera
     int i;  //  indice
-
     do{
         invalido=0;  // inicializa bandera
         printf("%s\n", msg);
         fflush(stdin);
         gets(cadena);  // se guarda el texto
+        mayusculas(cadena);
 
         for(i=0 ; cadena[i] != '\0'; i++);  // ciclo para acceder a todas las posiciones de la cadena
         if(i > n)  // si se cumple la condicion se activa la bandera
