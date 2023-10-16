@@ -1,9 +1,9 @@
 // Hernandez Ceseña Ivan Fernando  373077
-// 10/10/23
+// 10/10/23 / 15/10/23
 // 
 // 
 // 
-// NYP_ACT10_932
+// HCIF_ACT10_932
 
 #include "ivan.h"
 
@@ -150,24 +150,6 @@ void imprimirAleatorio(Talumns reg[], int posicion, int n)
         }
     }
 }
-
-// void imprimirAlumno(Talumns reg[], int posicion)
-// {
-//     int i;
-//     for(i=0; i < posicion; i++)
-//     {
-//         printf("%3s %6s %10s %20s %20s %20s %8s\n", "No.", "status", "matricula", "apellido paterno", "apellido materno", "nombre", "sexo");
-//         printf("%3d %6d %10d %20s %20s %20s", i+1, reg[i].status, reg[i].matricula, reg[i].apellidoPaterno, reg[i].apellidoMaterno, reg[i].nombre);
-//         if(reg[i].sexo == 1)
-//         {
-//             printf(" %8s\n", "Hombre");
-//         }
-//         else
-//         {
-//             printf(" %8s\n", "Mujer");
-//         }
-//     }
-// }
 
 void imprimirUnAlumno(Talumns reg[], int posicion)
 {
