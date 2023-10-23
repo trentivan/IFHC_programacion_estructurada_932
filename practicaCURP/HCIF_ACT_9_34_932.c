@@ -45,7 +45,7 @@ int main()
 
         if(op == 1)
         {
-            validacionTexto("dame el nombre", nombre, sizeof(nombre));
+            validacionTexto("dame tus nombres (no apellidos)", nombre, sizeof(nombre));
             omitirNombres(nombre, nombresCortos);
             omitirNombres(nombre, nombresCortos);
             omitirPartes(nombre, partes);
@@ -265,7 +265,7 @@ int main()
 int msg()
 {
     int op;
-    printf("INGRESA LOS SIGUIENTES DATOS PARA PODER OBTENER LA CURP\n");
+    printf("MENU\n");
     printf("1.- generar curp\n");
     printf("2.- Salir\n");
     op = validacionNumero("Selecciona una opcion: ", 1, 2);
