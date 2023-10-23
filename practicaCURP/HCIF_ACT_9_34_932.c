@@ -1,122 +1,21 @@
+// Hernandez Ceseña Ivan Fernando  373077
+// 22/10/23
+// codigo que genera la clave unica de registro de poblacio (CURP)
+// en base a las normativas
+// HCIF_ACT9_3/4_932
+
 #include "ivan.h"
 #include "listas.h"
 
-int msg()
-{
-    int op;
-    printf("INGRESA LOS SIGUIENTES DATOS PARA PODER OBTENER LA CURP\n");
-    printf("1.- generar curp\n");
-    printf("2.- Salir\n");
-    op = validacionNumero("Selecciona una opcion: ", 1, 2);
-    return op;
-}
 
-char primerVocal(char *cadena)
-{
-    char vocal;
+int msg();
+char primerVocal(char *cadena);
+char egundaConsonante(char cadena[]);
+int bisiesto(int anio);
+int antisonante(char cadena[], char antisonantes[][5], int numAntisonantes);
+void omitirNombres(char nombre[], char partes[][7]);
+void omitirPartes(char apellido[], char partes[][6]);
 
-    char primeraLetra = cadena[0];
-
-    cadena++;
-
-    while (*cadena)
-    {
-        if (strchr("AEIOU", *cadena))
-        {
-            vocal = toupper(*cadena);
-            return vocal;
-        }
-        cadena++;
-    }
-    return 'X';
-}
-
-char egundaConsonante(char cadena[])
-{
-    char primeraLetra = cadena[0];
-    int i = 1;
-
-    while (cadena[i] != '\0')
-    {
-        char caracter = cadena[i];
-        if (!strchr("AEIOUaeiou", caracter))
-        {
-            return caracter;
-        }
-        i++;
-    }
-    return '\0';
-}
-
-int bisiesto(int anio)
-{
-    if ((anio % 4 == 0 && anio % 100 != 0) || (anio % 400 == 0))
-    {
-        return 1;
-    }
-    else
-    {
-        return 0;
-    }
-}
-
-int antisonante(char cadena[], char antisonantes[][5], int numAntisonantes)
-{
-    char subcadena[5];
-
-    strncpy(subcadena, cadena, 4);
-    subcadena[4] = '\0';
-
-    for (int i = 0; i < numAntisonantes; i++)
-    {
-        if (strcmp(subcadena, antisonantes[i]) == 0)
-        {
-            return 1;
-        }
-    }
-
-    return 0;
-}
-
-void omitirNombres(char nombre[], char partes[][7])
-{
-    for (int i = 0; partes[i][0] != '\0'; i++)
-    {
-        char *encontrado = strstr(nombre, partes[i]);
-        while (encontrado != NULL)
-        {
-            int longitudParte = strlen(partes[i]);
-            int longitudRestante = strlen(encontrado + longitudParte);
-
-            for (int j = 0; j <= longitudRestante; j++)
-            {
-                encontrado[j] = encontrado[j + longitudParte];
-            }
-
-            encontrado = strstr(encontrado, partes[i]);
-        }
-    }
-}
-
-void omitirPartes(char apellido[], char partes[][6])
-{
-    for (int i = 0; partes[i][0] != '\0'; i++)
-    {
-        char *encontrado = strstr(apellido, partes[i]);
-        while (encontrado != NULL)
-        {
-            int longitudParte = strlen(partes[i]);
-            int longitudRestante = strlen(encontrado + longitudParte);
-
-            for (int j = 0; j <= longitudRestante; j++)
-            {
-                encontrado[j] = encontrado[j + longitudParte];
-            }
-
-            encontrado = strstr(encontrado, partes[i]);
-        }
-    }
-}
 
 int main()
 {
@@ -361,4 +260,121 @@ int main()
     }while(op != 2);
 
     return 0;
+}
+
+int msg()
+{
+    int op;
+    printf("INGRESA LOS SIGUIENTES DATOS PARA PODER OBTENER LA CURP\n");
+    printf("1.- generar curp\n");
+    printf("2.- Salir\n");
+    op = validacionNumero("Selecciona una opcion: ", 1, 2);
+    return op;
+}
+
+char primerVocal(char *cadena)
+{
+    char vocal;
+
+    char primeraLetra = cadena[0];
+
+    cadena++;
+
+    while (*cadena)
+    {
+        if (strchr("AEIOU", *cadena))
+        {
+            vocal = toupper(*cadena);
+            return vocal;
+        }
+        cadena++;
+    }
+    return 'X';
+}
+
+char egundaConsonante(char cadena[])
+{
+    char primeraLetra = cadena[0];
+    int i = 1;
+
+    while (cadena[i] != '\0')
+    {
+        char caracter = cadena[i];
+        if (!strchr("AEIOUaeiou", caracter))
+        {
+            return caracter;
+        }
+        i++;
+    }
+    return '\0';
+}
+
+int bisiesto(int anio)
+{
+    if ((anio % 4 == 0 && anio % 100 != 0) || (anio % 400 == 0))
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int antisonante(char cadena[], char antisonantes[][5], int numAntisonantes)
+{
+    char subcadena[5];
+
+    strncpy(subcadena, cadena, 4);
+    subcadena[4] = '\0';
+
+    for (int i = 0; i < numAntisonantes; i++)
+    {
+        if (strcmp(subcadena, antisonantes[i]) == 0)
+        {
+            return 1;
+        }
+    }
+
+    return 0;
+}
+
+void omitirNombres(char nombre[], char partes[][7])
+{
+    for (int i = 0; partes[i][0] != '\0'; i++)
+    {
+        char *encontrado = strstr(nombre, partes[i]);
+        while (encontrado != NULL)
+        {
+            int longitudParte = strlen(partes[i]);
+            int longitudRestante = strlen(encontrado + longitudParte);
+
+            for (int j = 0; j <= longitudRestante; j++)
+            {
+                encontrado[j] = encontrado[j + longitudParte];
+            }
+
+            encontrado = strstr(encontrado, partes[i]);
+        }
+    }
+}
+
+void omitirPartes(char apellido[], char partes[][6])
+{
+    for (int i = 0; partes[i][0] != '\0'; i++)
+    {
+        char *encontrado = strstr(apellido, partes[i]);
+        while (encontrado != NULL)
+        {
+            int longitudParte = strlen(partes[i]);
+            int longitudRestante = strlen(encontrado + longitudParte);
+
+            for (int j = 0; j <= longitudRestante; j++)
+            {
+                encontrado[j] = encontrado[j + longitudParte];
+            }
+
+            encontrado = strstr(encontrado, partes[i]);
+        }
+    }
 }

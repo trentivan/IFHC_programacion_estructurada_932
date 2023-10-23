@@ -16,8 +16,9 @@ char antisonantes[][5] =
 "RUIN", "SENO", "TETA", "VACA", "VAGA", 
 "VAGO", "VAKA", "VUEI", "VUEY", "WUEI", "WUEY"};
 
-char nombresCortos[][7] = {"MARIA ", "MAX ", "MA ", "MX ",
-                           "M ", "JOSE ", "JX ", "J "};
+char nombresCortos[][7] = 
+{"MARIA ", "MAX ", "MA ", "MX ",
+"M ", "JOSE ", "JX ", "J "};
 
 char partes[][6] = 
 {"DAS ", "DEL ", "DE ", "DER ", "DIE ", 
