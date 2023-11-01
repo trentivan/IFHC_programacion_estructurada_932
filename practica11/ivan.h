@@ -210,7 +210,7 @@ char primerVocal(char cadena[])
 {
     char vocal;
 
-    char primeraLetra = cadena[0];
+    // char primeraLetra = cadena[0];
 
     cadena++;
 
@@ -228,7 +228,7 @@ char primerVocal(char cadena[])
 
 char segundaConsonante(char cadena[])
 {
-    char primeraLetra = cadena[0];
+    // char primeraLetra = cadena[0];
     int i = 1;
 
     while (cadena[i] != '\0')

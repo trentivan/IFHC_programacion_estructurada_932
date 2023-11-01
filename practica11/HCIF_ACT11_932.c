@@ -1,4 +1,15 @@
-
+//  Hernandez Ceseña Ivan Fernando  373077
+//  01/11/23 
+//  1.- Agregar
+//    a) manual (1)
+//    b) Automatico (100)
+//    c) Regresar 
+//  2.- Eliminar Registro
+//  3.- Buscar 
+//  4.- Ordenar 
+//  5.- Imprimir
+//  6.- Archivo Texto
+// HCIF_ACT10_932
 
 
 
@@ -31,39 +42,21 @@ typedef struct _alumnos{
 
 int msg(void);
 int msg2(void);
-void imprimirAleatorio(Talumns reg[], int posicion, int n);
-void imprimirUnAlumno(Talumns reg[], int posicion);
-void registroAleatorio(Talumns reg[], int posicion, int n);
-void sexo(Talumns reg[], int posicion, int li, int ls);
-void status(Talumns reg[], int posicion);
-void matricula(Talumns reg[], int li, int ls, int posicion);
-void fapellidoPaterno(Talumns reg[], int posicion);
-void fapellidoMaterno(Talumns reg[], int posicion);
-void nombre(Talumns reg[], int posicion);
-void edad(Talumns reg[], int posicion, int li, int ls);
 
-void alumnoManual(Talumns reg[], int posicion);
+void generarCurpManual(Talumns reg[], int i);
+void generarCurpAleatoria(Talumns reg[], int posicion, int n);
+void imprimirUnAlumno(Talumns reg[], int posicion);
 int existeValor(Talumns reg[], int n, int numero);
 void eliminarRegistro(Talumns reg[], int posicion);
 void buscarElemento(Talumns reg[], int posicion, int bandera);
 void imprimirEncontrado(Talumns reg[], int buscar);
 void imprimirRegistro(Talumns reg[], int posicion);
 void ordenarAscendente(Talumns reg[], int n);
-int busquedaBinaria(Talumns reg[], int izquierda, int derecha);
-void generarCurpManual(Talumns reg[], int i);
-void generarCurpAleatoria(Talumns reg[], int posicion, int n);
-void archivoTexto(Talumns reg[], int posicion);
-
-void quicksort(Talumns reg[], int menor, int mayor);
-int particion(Talumns reg[], int menor, int mayor);
 void cambiar(Talumns reg[], int i, int j);
-
-char primerVocal(char cadena[]);
-char segundaConsonante(char cadena[]);
-int bisiesto(int anio);
-// int antisonante(char cadena[], char antisonantes[][5], int numAntisonantes);
-void omitirNombres(char nombre[], char partes[][7]);
-void omitirPartes(char apellido[], char partes[][6]);
+int particion(Talumns reg[], int menor, int mayor);
+void quicksort(Talumns reg[], int menor, int mayor);
+int busquedaBinaria(Talumns reg[], int izquierda, int derecha);
+void archivoTexto(Talumns reg[], int posicion);
 
 
 int main()
@@ -103,7 +96,7 @@ int main()
                 break;
 
                 case 2:
-                aumentar = 300;
+                aumentar = 100;
                 if((posicion + aumentar) > n)
                 {
                     aumentar = n - posicion;
@@ -184,12 +177,8 @@ int msg2()
 
 void generarCurpManual(Talumns reg[], int i)
 {
-    // char nombre[50];
-    // char apellidoPaterno[50];
-    
     int opcion1;
     int opcion2;
-    // char apellidoMaterno[50];
     int dia;
     char Cdia[3];
     int mes;
