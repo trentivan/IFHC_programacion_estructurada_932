@@ -373,21 +373,16 @@ void comenzar_sinespacios(char palabra[])
     
     for(int i=0, contador; palabra[i] != '\0';i++)
     {
-        if(i==0)
+        
+        if(palabra[0] == ' ')
         {
-            if(palabra[i] == ' ')
+            printf("la cadena no puede empezar con espacios\n");
+            for(int i=0; palabra[i] != '\0';i++)
             {
-                printf("la cadena no puede empezar con espacios\n");
-                for(int i=0; palabra[i] != '\0';i++)
-                {
-                    if(palabra[i]== ' ')
-                    {
-                        palabra[i]=palabra[i+1];
-                    }
-                }
-                
-            }
+                palabra[i]=palabra[i+1];
+            } 
         }
+        
         if(i==contador)
         {
             if(palabra[i]==' ')

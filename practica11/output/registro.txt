@@ -1,0 +1,501 @@
+No. status  matricula     apellido paterno     apellido materno               nombre edad     sexo                curp
+  1      1     327981              SANCHEZ              SALAZAR               MARTIN   23   HOMBRE SASM001023HHGNLRA8
+  2      1     313020               FLORES               FLORES                DIANA   75    MUJER FOFD480107MASLLN04
+  3      1     326900           VALENZUELA             FIGUEROA               ADRIAN   97   HOMBRE VAFA260109HMNLGD02
+  4      1     303406              DELGADO                MUNOZ               ISABEL    4    MUJER DEMI191222MASLNSB2
+  5      1     323496                MUNOZ                 CRUZ                CLARA   33    MUJER MUCC900514MSPNRL01
+  6      1     324228               SUAREZ              AGUILAR               SAMUEL   42   HOMBRE SUAS811125HDFRGM07
+  7      1     318966               VARGAS                PONCE                DIANA    5    MUJER VAPD180515MBCRNNB2
+  8      1     326269              RAMIREZ             MARTINEZ                LUCAS   76   HOMBRE RAML470724HSLMRC01
+  9      1     304726               TORRES            FERNANDEZ                JUANA   78    MUJER TOFJ451229MCCRRN05
+ 10      1     305552            HERNANDEZ            RODRIGUEZ               ISABEL  115    MUJER HERI081111MTSRDS05
+ 11      1     312426                 MORA               ORTEGA               CARLOS  109   HOMBRE MOOC141107HDFRRR03
+ 12      1     300518                 RUIZ                SILVA               OLIVER   95   HOMBRE RUSO281212HOCZLL01
+ 13      1     313511               CAMPOS                 DIAZ                ADELA   89    MUJER CADA340313MDGMZD04
+ 14      1     323237                MUNOZ               RIVERA                IRENE   60    MUJER MURI631007MCLNVR02
+ 15      1     305204               ACOSTA                SALAS               ULISES   70   HOMBRE AOSU530801HYNCLL02
+ 16      1     307567                MUNOZ              MIRANDA                ANGEL  113   HOMBRE MUMA100913HQRNRN02
+ 17      1     313616             CASTILLO             MARTINEZ             FERNANDO   26   HOMBRE CAMF971116HQTSRR04
+ 18      1     304684                 LARA               RIVERA                JUANA   65    MUJER LARJ581117MQRRVN02
+ 19      1     323192               VARGAS               BUSTOS               NESTOR   76   HOMBRE VABN470313HMSRSS01
+ 20      1     320773               BUSTOS                 LARA           INMACULADA   98    MUJER BULI250513MPLSRN04
+ 21      1     321929                GOMEZ            FERNANDEZ               MIGUEL   18   HOMBRE GOFM050521HCHMRGA1
+ 22      1     322226                 RUIZ                 MORA               MIRIAM   65    MUJER RUMM581106MDFZRR01
+ 23      1     307746            FERNANDEZ                 DIAZ                 INES   11    MUJER FEDI120415MGRRZNB2
+ 24      1     327415               RIVERA               SUAREZ                 OLGA   24    MUJER RISO990114MTLVRL02
+ 25      1     314381              RAMIREZ                GOMEZ                MARTA   93    MUJER RAGM301205MVZMMR01
+ 26      1     323945               GUERRA           VILLANUEVA               TERESA   73    MUJER GUVT500322MBSRLR06
+ 27      1     302175              BARRIOS                SALAS                 PACO   21   HOMBRE BASP021015HCSRLCA6
+ 28      1     323702               RIVERA                PONCE                LAURA   70    MUJER RIPL530412MCCVNR02
+ 29      1     332573                 MORA            GUTIERREZ               ESTHER   40    MUJER MOGE831001MMNRTS05
+ 30      1     327333             FIGUEROA              SALAZAR                CLARA   21    MUJER FISC020117MDFGLLA3
+ 31      1     314658                GOMEZ           VALENZUELA              ROSARIO    8    MUJER GOVR150606MCHMLSB8
+ 32      1     313884              BARRIOS                 VEGA                 LUIS   85   HOMBRE BAVL380310HSLRGS02
+ 33      1     332350               BUSTOS                SILVA              WILLIAM  123   HOMBRE BUSW000405HMNSLL01
+ 34      1     322144             GUERRERO               BUSTOS                JUANA   64    MUJER GUBJ590708MSLRSN06
+ 35      1     316320            HERNANDEZ           VILLANUEVA              ROSARIO  107    MUJER HEVR161123MNLRLS02
+ 36      1     313442              PAREDES              MORALES                LAURA  116    MUJER PAML070522MGRRRR03
+ 37      1     331382               ORTEGA                GOMEZ            MARGARITA   29    MUJER OEGM940319MZSRMR01
+ 38      1     308407                SOLIS           VILLANUEVA               XAVIER   63   HOMBRE SOVX601207HNTLLV02
+ 39      1     308947               FLORES               TORRES                PABLO   40   HOMBRE FOTP830416HVZLRB01
+ 40      1     323624               TORRES              SALAZAR                JORGE   21   HOMBRE TOSJ020407HMSRLRA1
+ 41      1     331475              MENDOZA                PEREZ              YOLANDA   22    MUJER MEPY010719MVZNRLA1
+ 42      1     305771               TORRES               FLORES                 RAUL    7   HOMBRE TOFR160524HGTRLLB1
+ 43      1     331259               ORTEGA                GOMEZ            FELICIDAD   57    MUJER OEGF660829MZSRML08
+ 44      1     310064               TORRES               TORRES                SOFIA  117    MUJER TOTS060605MQTRRF03
+ 45      1     310500           VALENZUELA              SALAZAR               SILVIA   54    MUJER VASS690818MGRLLL04
+ 46      1     301409            HERNANDEZ                 RIOS               MIGUEL   78   HOMBRE HERM450511HSPRSG01
+ 47      1     305432                 RIOS              MIRANDA                DIANA   29    MUJER RIMD941115MOCSRN02
+ 48      1     316579               GUERRA              PAREDES               SUSANA    7    MUJER GUPS161005MNERRSB6
+ 49      1     316733             GUERRERO              MIRANDA                 LUIS   21   HOMBRE GUML020705HSRRRSA7
+ 50      1     300322                PEREZ              SANCHEZ            BARTOLOME   12   HOMBRE PESB110928HNERNRB1
+ 51      1     313714                PONCE                 DIAZ              GUSTAVO  102   HOMBRE PODG210324HMCNZS04
+ 52      1     320908                ROJAS               TORRES            MARGARITA   25    MUJER ROTM980409MSRJRR01
+ 53      1     305143           VILLANUEVA                PONCE               ALVARO   12   HOMBRE VIPA110222HOCLNLB1
+ 54      1     314203                PONCE                SILVA               ANGELA   24    MUJER POSA990529MMCNLN02
+ 55      1     322066                MUNOZ              BARRIOS               SILVIA   35    MUJER MUBS881215MCMNRL06
+ 56      1     323928            HERNANDEZ                ROJAS                LUISA   92    MUJER HERL310411MCHRJS06
+ 57      1     305454              PAREDES                 LARA                ELENA   31    MUJER PALE920207MSRRRL01
+ 58      1     321630              MORALES           VILLANUEVA               SUSANA   66    MUJER MOVS570929MHGRLS02
+ 59      1     301126                 VEGA               SUAREZ                ADELA   25    MUJER VESA981128MZSGRD09
+ 60      1     311900              MORALES                PONCE               CARLOS  123   HOMBRE MOPC000825HASRNR02
+ 61      1     332162              PAREDES              SANCHEZ               CARLOS   51   HOMBRE PASC720614HPLRNR01
+ 62      1     330655             GUERRERO                ROJAS                FELIX    5   HOMBRE GURF180521HSRRJLB1
+ 63      1     318496                 LARA               VARGAS               ULISES  108   HOMBRE LAVU151125HVZRRL03
+ 64      1     321103              JIMENEZ              AGUILAR                JULIA  118    MUJER JIAJ050507MZSMGL02
+ 65      1     331415                MUNOZ           VILLANUEVA               ADRIAN    4   HOMBRE MUVA190712HSLNLDB2
+ 66      1     314424              BARRIOS               TORRES                ADELA   77    MUJER BATA460128MQTRRD04
+ 67      1     307447            GUTIERREZ           VALENZUELA                 SARA  105    MUJER GUVS180314MMSTLR08
+ 68      1     309963              DELGADO           VALENZUELA               RAQUEL   39    MUJER DEVR841115MCMLLQ02
+ 69      1     328597              MIRANDA                ROJAS               OLIVER   18   HOMBRE MIRO050618HTSRJLA4
+ 70      1     314725               VARGAS              RAMIREZ               TERESA   35    MUJER VART881017MTSRMR08
+ 71      1     331237                 DIAZ                 LUNA                LAURA   64    MUJER DILL590207MOCZNR02
+ 72      1     330192               ACOSTA             FIGUEROA              MANUELA    9    MUJER AOFM140225MHGCGNB4
+ 73      1     317864              JIMENEZ                MUNOZ               MONICA   90    MUJER JIMM330827MDFMNN03
+ 74      1     320265                SILVA               BUSTOS               MANUEL   98   HOMBRE SIBM250716HPLLSN09
+ 75      1     327240                PEREZ              MORALES                 PACO   45   HOMBRE PEMP781113HCLRRC03
+ 76      1     308801              MENDOZA               BUSTOS            MARGARITA   66    MUJER MEBM570122MASNSR05
+ 77      1     319616              MENDOZA              MIRANDA               ANGELA   32    MUJER MEMA910311MZSNRN02
+ 78      1     312871               TORRES                SALAS                 OLGA   82    MUJER TOSO410415MDFRLL03
+ 79      1     313921                PEREZ                 CRUZ               ESTHER   70    MUJER PECE530919MNLRRS03
+ 80      1     325734              BARRIOS                 RUIZ               SUSANA    2    MUJER BARS210628MVZRZSB6
+ 81      1     310994             GUERRERO              MORALES               MIRIAM   36    MUJER GUMM871001MHGRRR03
+ 82      1     317802                 LARA            GUTIERREZ               MANUEL   66   HOMBRE LAGM570326HBSRTN02
+ 83      1     307000                MUNOZ                 RUIZ                ANGEL   37   HOMBRE MURA861210HPLNZN03
+ 84      1     305768            FERNANDEZ                 VEGA                DIANA   83    MUJER FEVD400830MTLRGN09
+ 85      1     324310           VILLANUEVA              PAREDES               SUSANA  119    MUJER VIPS040111MJCLRS02
+ 86      1     327070              DELGADO                 MORA               CARMEN   13    MUJER DEMC100225MDFLRRB2
+ 87      1     305238               CAMPOS              SALAZAR                LUCAS  108   HOMBRE CASL150202HMNMLC02
+ 88      1     304344                 LUNA              AGUILAR                DIEGO   68   HOMBRE LUAD551210HDGNGG02
+ 89      1     320200               ORTEGA                GOMEZ               MANUEL   29   HOMBRE OEGM941019HCMRMN04
+ 90      1     325172                GOMEZ              CABRERA                JULIA   87    MUJER GOCJ361116MPLMBL03
+ 91      1     313097                 LARA               SUAREZ             VICTORIA   26    MUJER LASV970413MMNRRC07
+ 92      1     305960                MUNOZ              NAVARRO                LUISA   39    MUJER MUNL840917MCSNVS01
+ 93      1     327015                GOMEZ                MUNOZ                DIANA  108    MUJER GOMD150103MCCMNN01
+ 94      1     318914                 LUNA              SANCHEZ                MARCO  107   HOMBRE LUSM160411HCMNNR07
+ 95      1     301955                 VEGA           VILLANUEVA              VICENTE  109   HOMBRE VEVV140609HMCGLC01
+ 96      1     321584               BUSTOS                 LUNA              ROBERTO   77   HOMBRE BULR461218HVZSNB01
+ 97      1     322168                 MORA              SANCHEZ                LUISA   65    MUJER MOSL580508MTLRNS02
+ 98      1     305793                GOMEZ                 LARA                JORGE  108   HOMBRE GOLJ150713HASMRR01
+ 99      1     306491              DELGADO              DELGADO                 IVAN  100   HOMBRE DEDI230626HCHLLV02
+100      1     326315                 LARA               CAMPOS                BELEN  112    MUJER LACB110816MNTRML03
+101      1     314180           VILLANUEVA            RODRIGUEZ                MARTA   64    MUJER VIRM590429MASLDR04
+102      1     312013              RAMIREZ              PAREDES                 RAUL    6   HOMBRE RAPR170728HQTMRLB2
+103      1     328555              DELGADO               RIVERA                 YAGO   25   HOMBRE DERY980522HBSLVG02
+104      1     332215                 LARA                GOMEZ                ADELA   92    MUJER LAGA310812MTCRMD02
+105      1     330517              AGUILAR                 DIAZ              GUSTAVO   42   HOMBRE AUDG811118HCHGZS02
+106      1     303529                 RIOS                ROJAS              MANUELA   56    MUJER RIRM670113MCHSJN01
+107      1     310673               VARGAS              JIMENEZ                 ABEL   63   HOMBRE VAJA600914HTSRMB01
+108      1     301401              BARRIOS                MUNOZ                ANGEL  105   HOMBRE BAMA180410HSLRNN02
+109      1     311229            FERNANDEZ              AGUILAR                JORGE   67   HOMBRE FEAJ561225HYNRGR02
+110      1     330552              SANCHEZ                 RUIZ              GERARDO   70   HOMBRE SARG530404HYNNZR04
+111      1     310254               ORTEGA              CABRERA                 OLGA   27    MUJER OECO960108MDFRBL01
+112      1     325366               CAMPOS             FIGUEROA                CLARA    9    MUJER CAFC140319MTCMGLB1
+113      1     301584             MARTINEZ                PEREZ                 JOSE   60   HOMBRE MAPJ631120HGRRRS01
+114      1     315717                 MORA               FLORES              LETICIA   30    MUJER MOFL930909MMCRLT08
+115      1     317450                 CRUZ                SILVA               ARTURO    4   HOMBRE CUSA190810HCHRLRB7
+116      1     316891               ACOSTA                GOMEZ               LORENA   44    MUJER AOGL791204MYNCMR07
+117      1     321125               BUSTOS               RIVERA               CARMEN   24    MUJER BURC991009MOCSVR02
+118      1     305083                SALAS               FLORES              RICARDO  106   HOMBRE SAFR170831HSPLLC01
+119      1     306478               ACOSTA                PONCE               ELVIRA   81    MUJER AOPE420728MCMCNL02
+120      1     328630                 RUIZ            GUTIERREZ               ISABEL   58    MUJER RUGI650414MSPZTS02
+121      1     302361              RAMIREZ               CAMPOS               MONICA   88    MUJER RACM351231MMCMMN02
+122      1     330030            FERNANDEZ                 LARA                        10    MUJER FEL 130119MMCRRXB4
+123      1     323816            HERNANDEZ              BARRIOS                IRENE   68    MUJER HEBI550605MASRRR02
+124      1     318747                PONCE                 RUIZ             CONSUELO   38    MUJER PORC850613MSRNZN06
+125      1     328460            FERNANDEZ                 MORA              GUSTAVO   89   HOMBRE FEMG341027HCCRRS02
+126      1     306000              PAREDES                ROJAS             ZACARIAS  100   HOMBRE PARZ231204HNLRJC02
+127      1     318347                PONCE            RODRIGUEZ                ADELA  118    MUJER PORA051105MCCNDD06
+128      1     313856            HERNANDEZ            GUTIERREZ                 JOSE  111   HOMBRE HEGJ120312HDGRTS02
+129      1     317986            RODRIGUEZ                 DIAZ              ROSARIO    7    MUJER RODR160913MNEDZSB1
+130      1     328573              MORALES              BARRIOS             FERNANDO   13   HOMBRE MOBF101017HNLRRRB1
+131      1     303276             GUERRERO           VALENZUELA               OLIVER   52   HOMBRE GUVO710703HBSRLL07
+132      1     313921              SANCHEZ                LOPEZ               RAQUEL   40    MUJER SALR831017MMNNPQ08
+133      1     303555                 LARA              MORALES                 IVAN  122   HOMBRE LAMI010914HTSRRV02
+134      1     318256               SUAREZ              MIRANDA               SUSANA   72    MUJER SUMS510914MGRRRS02
+135      1     325542             GUERRERO               CAMPOS                 IVAN   47   HOMBRE GUCI760313HASRMV01
+136      1     332316                 CRUZ                PEREZ                JUANA   58    MUJER CUPJ650611MMSRRN02
+137      1     321371                 LUNA                LOPEZ               ANDRES   88   HOMBRE LULA350914HSRNPN02
+138      1     324747                GOMEZ                 RUIZ                        56    MUJER GOR 670727MTSMZX03
+139      1     308246             GUERRERO                 RUIZ             VICTORIA   49    MUJER GURV740827MGTRZC01
+140      1     308918                ROJAS               FLORES                ELENA  107    MUJER ROFE161112MBCJLL01
+141      1     304859            HERNANDEZ                SALAS                LAURA   94    MUJER HESL290403MOCRLR01
+142      1     310995              MENDOZA                SILVA                JORGE  116   HOMBRE MESJ070808HASNLR03
+143      1     323168              MENDOZA              MIRANDA               OLIVER   96   HOMBRE MEMO270330HMNNRL02
+144      1     322197               ACOSTA               FLORES             CONSUELO  102    MUJER AOFC210827MQRCLN02
+145      1     310070                GOMEZ                LOPEZ             ZACARIAS   36   HOMBRE GOLZ871009HBSMPC09
+146      1     301809               CAMPOS              SANCHEZ              VICENTE    1   HOMBRE CASV220407HNEMNCB7
+147      1     310312              MENDOZA               RIVERA              ROBERTO  113   HOMBRE MERR100208HYNNVB08
+148      1     313892               VARGAS              MIRANDA              YOLANDA    8    MUJER VAMY150828MMCRRLB2
+149      1     319204               RIVERA              SANCHEZ                PEDRO  104   HOMBRE RISP190917HQRVND02
+150      1     307187              AGUILAR               FLORES               CARMEN  109    MUJER AUFC140207MBCGLR03
+151      1     325850              NAVARRO                SILVA               CARMEN   99    MUJER NASC240614MGTVLR02
+152      1     309298             FIGUEROA                 MORA                  ANA  119    MUJER FIMA040804MNTGRN02
+153      1     310371             MARTINEZ               VARGAS                 IVAN   68   HOMBRE MAVI550130HTLRRV01
+154      1     315273                 RUIZ                 LARA              ROBERTO   68   HOMBRE RULR551207HDFZRB01
+155      1     302627                 CRUZ                 MORA                BELEN   50    MUJER CUMB730727MMSRRL02
+156      1     313971               TORRES                MUNOZ              ENRIQUE  107   HOMBRE TOME161102HHGRNN01
+157      1     331441             FIGUEROA            FERNANDEZ                LUISA   19    MUJER FIFL040831MCSGRSA2
+158      1     322184                SOLIS              NAVARRO               NESTOR   52   HOMBRE SONN710403HMCLVS06
+159      1     306294               BUSTOS                SILVA               HECTOR  109   HOMBRE BUSH140629HZSSLC02
+160      1     312830              MIRANDA                PEREZ              ROBERTO   40   HOMBRE MIPR831010HCMRRB02
+161      1     315860              AGUILAR                 CRUZ              RICARDO   15   HOMBRE AUCR080701HTCGRCA3
+162      1     300395                ROJAS            GUTIERREZ               RAQUEL   38    MUJER ROGR850814MNLJTQ02
+163      1     304008                PONCE              MENDOZA                LAURA   29    MUJER POML941018MCHNNR07
+164      1     306125                 RUIZ               CAMPOS            MARGARITA    8    MUJER RUCM150521MTSZMRB2
+165      1     328530                GOMEZ              BARRIOS               ISABEL    9    MUJER GOBI141121MZSMRSB1
+166      1     302284              SALAZAR            RODRIGUEZ               CARLOS   92   HOMBRE SARC311116HQRLDR08
+167      1     330452              MENDOZA               VARGAS                ANGEL  109   HOMBRE MEVA140715HGRNRN03
+168      1     316736            GUTIERREZ                 LUNA               GLORIA  110    MUJER GULG130827MTSTNL01
+169      1     324281                SILVA             CASTILLO               SUSANA  110    MUJER SICS130125MNTLSS01
+170      1     305647                 VEGA              NAVARRO                        16    MUJER VEN 070210MVZGVXA3
+171      1     330264                PEREZ                 DIAZ           INMACULADA   24    MUJER PEDI990627MTCRZN02
+172      1     303258               FLORES                 VEGA               SERGIO   20   HOMBRE FOVS031027HNELGRA1
+173      1     303640               ACOSTA              SALAZAR               MANUEL   67   HOMBRE AOSM560616HSRCLN04
+174      1     325432               FLORES             MARTINEZ              CECILIA   33    MUJER FOMC900528MCSLRC02
+175      1     332245             FIGUEROA              BARRIOS                MARCO   87   HOMBRE FIBM361207HCSGRR01
+176      1     306562            FERNANDEZ              PAREDES                 INES   99    MUJER FEPI240227MDFRRN02
+177      1     308868              SALAZAR               CAMPOS                 ROSA   46    MUJER SACR771118MMSLMS01
+178      1     300208                LOPEZ               FLORES               ALVARO   59   HOMBRE LOFA640720HGTPLL01
+179      1     332755                 LARA            GUTIERREZ              YOLANDA   82    MUJER LAGY410729MZSRTL01
+180      1     305539              RAMIREZ                LOPEZ                 JOSE   91   HOMBRE RALJ320410HMNMPS01
+181      1     325780               FLORES                MUNOZ             ZACARIAS   18   HOMBRE FOMZ051107HOCLNCA5
+182      1     310405                 VEGA                MUNOZ              RICARDO   62   HOMBRE VEMR610118HCSGNC01
+183      1     314267                MUNOZ             MARTINEZ               JAVIER   73   HOMBRE MUMJ500315HZSNRV02
+184      1     306317           VALENZUELA                 MORA               ISABEL  111    MUJER VAMI120103MGRLRS04
+185      1     320741             FIGUEROA                PEREZ                IRENE    1    MUJER FIPI220812MNTGRRB8
+186      1     309126                 RIOS                 RIOS              VICENTE  104   HOMBRE RIRV190301HTCSSC06
+187      1     300795             MARTINEZ                SALAS               LORENA   18    MUJER MASL050620MCCRLRA1
+188      1     304498               CAMPOS                 RUIZ               FELIPE   96   HOMBRE CARF270928HCSMZL01
+189      1     314519             CASTILLO               BUSTOS                JORGE   58   HOMBRE CABJ651023HHGSSR02
+190      1     315819               RIVERA              JIMENEZ               OLIVER   46   HOMBRE RIJO770130HZSVML02
+191      1     319110               ORTEGA                LOPEZ             FERNANDO   31   HOMBRE OELF920423HCHRPR01
+192      1     317034                 CRUZ             FIGUEROA               ANDRES  107   HOMBRE CUFA160614HOCRGN03
+193      1     329166                SALAS              CABRERA                 ROSA   66    MUJER SACR571121MMNLBS02
+194      1     319115              BARRIOS                SILVA              PASCUAL   69   HOMBRE BASP540326HSPRLS03
+195      1     331281                 RIOS                 CRUZ              GERARDO   55   HOMBRE RICG680801HTLSRR01
+196      1     319887               VARGAS               ORTEGA                MARTA  121    MUJER VAOM021126MTLRRR01
+197      1     306226               RIVERA              AGUILAR           INMACULADA   21    MUJER RIAI021217MNTVGNA1
+198      1     314851               GUERRA              RAMIREZ                ANGEL   39   HOMBRE GURA841027HZSRMN02
+199      1     302391              RAMIREZ            HERNANDEZ               OLIVER   24   HOMBRE RAHO990522HMSMRL01
+200      1     320866                 LARA             GUERRERO                JULIA  102    MUJER LAGJ210317MQTRRL02
+201      1     323951                 CRUZ                PEREZ                 SARA   41    MUJER CUPS820716MSPRRR03
+202      1     315414                 LUNA              MORALES               MANUEL   50   HOMBRE LUMM730504HCLNRN01
+203      1     305110                 LUNA              JIMENEZ               NESTOR   84   HOMBRE LUJN390618HTSNMS02
+204      1     305476                 VEGA              AGUILAR                SOFIA   55    MUJER VEAS680213MTLGGF08
+205      1     327094               GUERRA               RIVERA              ANTONIO   76   HOMBRE GURA470315HVZRVN02
+206      1     330408              BARRIOS               RIVERA              RICARDO  113   HOMBRE BARR100502HTCRVC03
+207      1     300687            RODRIGUEZ            HERNANDEZ               NESTOR    6   HOMBRE ROHN170316HQRDRSB1
+208      1     317949              SANCHEZ                 LUNA              GERARDO   45   HOMBRE SALG780317HQTNNR03
+209      1     319546              MORALES                LOPEZ                ELENA   92    MUJER MOLE310704MBCRPL02
+210      1     318658                 CRUZ              MENDOZA              ROSARIO  116    MUJER CUMR070627MHGRNS02
+211      1     317258                 LUNA             CASTILLO              ENRIQUE  112   HOMBRE LUCE110924HDFNSN01
+212      1     316985               RIVERA               FLORES              CECILIA  112    MUJER RIFC110104MMNVLC01
+213      1     331700                PEREZ           VILLANUEVA                TOMAS   20   HOMBRE PEVT030321HTCRLMA1
+214      1     308145              SANCHEZ                SILVA            MARGARITA   23    MUJER SASM000723MOCNLRA1
+215      1     304560              JIMENEZ              PAREDES               ALVARO   25   HOMBRE JIPA980222HVZMRL03
+216      1     330502             FIGUEROA               GUERRA                LUISA   90    MUJER FIGL330513MCLGRS02
+217      1     326367            FERNANDEZ                PEREZ             PATRICIA   86    MUJER FEPP370524MZSRRT05
+218      1     323430            RODRIGUEZ              AGUILAR           INMACULADA   44    MUJER ROAI791021MASDGN01
+219      1     320431               ORTEGA             MARTINEZ              VICENTE   58   HOMBRE OEMV650325HSRRRC01
+220      1     319575              BARRIOS                GOMEZ               MIGUEL   18   HOMBRE BAGM050604HTSRMGA5
+221      1     305405                LOPEZ               ACOSTA              NATALIA    9    MUJER LOAN140524MGRPCTB1
+222      1     317175                PONCE              MORALES            MARGARITA   87    MUJER POMM360107MVZNRR07
+223      1     328186             MARTINEZ                PONCE                SOFIA   15    MUJER MAPS080428MSRRNFA1
+224      1     308612                SOLIS              SALAZAR             FERNANDO   41   HOMBRE SOSF820602HMSLLR05
+225      1     322128                GOMEZ            RODRIGUEZ              LETICIA   35    MUJER GORL880618MQTMDT02
+226      1     302365             CASTILLO                 DIAZ               SUSANA   39    MUJER CADS840608MCMSZS01
+227      1     325766               GUERRA              SANCHEZ                 IVAN  105   HOMBRE GUSI181112HBCRNV02
+228      1     323016                ROJAS                MUNOZ             BENJAMIN  102   HOMBRE ROMB210609HGRJNN03
+229      1     301218               RIVERA                SILVA                 LUIS   98   HOMBRE RISL251104HHGVLS01
+230      1     324789               ACOSTA                 DIAZ               XAVIER   85   HOMBRE AODX380520HZSCZV08
+231      1     315150             MARTINEZ             MARTINEZ              GERARDO   84   HOMBRE MAMG391013HNLRRR01
+232      1     330945                ROJAS              SALAZAR              ENRIQUE  112   HOMBRE ROSE110911HCMJLN05
+233      1     321469                SILVA             GUERRERO               LORENA  105    MUJER SIGL180310MCCLRR02
+234      1     308543                LOPEZ                SOLIS               ALVARO   10   HOMBRE LOSA131206HDGPLLB2
+235      1     308624                LOPEZ              RAMIREZ               ELVIRA   28    MUJER LORE950825MMCPML02
+236      1     320244              DELGADO               TORRES               ALVARO   37   HOMBRE DETA861020HOCLRL04
+237      1     312820             FIGUEROA             FIGUEROA               ISABEL   42    MUJER FIFI810910MSRGGS01
+238      1     331617               BUSTOS            RODRIGUEZ               GLORIA   44    MUJER BURG790608MTCSDL01
+239      1     306381           VALENZUELA            GUTIERREZ                LUCAS   34   HOMBRE VAGL890422HCCLTC02
+240      1     313927            FERNANDEZ               TORRES               SILVIA   35    MUJER FETS880906MCSRRL01
+241      1     314520            HERNANDEZ               TORRES           INMACULADA  103    MUJER HETI200916MPLRRN08
+242      1     315749                SILVA              JIMENEZ               MARTIN    3   HOMBRE SIJM200902HOCLMRB1
+243      1     310989              SANCHEZ            RODRIGUEZ              YOLANDA   46    MUJER SARY771015MCLNDL01
+244      1     324229                 RIOS                 RUIZ                 ABEL   32   HOMBRE RIRA911011HMNSZB01
+245      1     311428               RIVERA               ORTEGA               ELVIRA  107    MUJER RIOE160102MGTVRL08
+246      1     310199              PAREDES            GUTIERREZ              VANESSA   30    MUJER PAGV930629MDGRTN01
+247      1     313177                GOMEZ                 MORA                PEDRO   21   HOMBRE GOMP020817HHGMRDA7
+248      1     310749              DELGADO                LOPEZ               RAQUEL   39    MUJER DELR840215MSRLPQ06
+249      1     303762               RIVERA                MUNOZ                JULIA   16    MUJER RIMJ070801MCLVNLA3
+250      1     320872                PEREZ           VILLANUEVA                 LUIS   70   HOMBRE PEVL530506HDGRLS02
+251      1     314495                MUNOZ              DELGADO                JUANA   87    MUJER MUDJ360618MSLNLN01
+252      1     306530                GOMEZ                LOPEZ              YOLANDA    4    MUJER GOLY190810MMNMPLB1
+253      1     315427                MUNOZ            FERNANDEZ                 LUIS   65   HOMBRE MUFL580315HCSNRS01
+254      1     307374              CABRERA              MORALES                JORGE  103   HOMBRE CAMJ201013HGRBRR02
+255      1     321298               GUERRA                ROJAS               ISABEL   11    MUJER GURI121023MASRJSB2
+256      1     318861            RODRIGUEZ               ACOSTA                NADIA  114    MUJER ROAN091014MPLDCD01
+257      1     308123               FLORES                GOMEZ               CARLOS   88   HOMBRE FOGC350709HJCLMR01
+258      1     315234              BARRIOS              PAREDES              PASCUAL   24   HOMBRE BAPP990210HYNRRS02
+259      1     310055                 LUNA                 DIAZ              ROSARIO  108    MUJER LUDR150909MCLNZS02
+260      1     332471              PAREDES               CAMPOS               MANUEL   25   HOMBRE PACM980907HNLRMN02
+261      1     328930               TORRES              SANCHEZ               RAQUEL  103    MUJER TOSR200410MQRRNQ02
+262      1     317312              CABRERA              JIMENEZ              NATALIA   14    MUJER CAJN090421MNEBMTA9
+263      1     327833             FIGUEROA               CAMPOS             ZACARIAS   36   HOMBRE FICZ870413HZSGMC02
+264      1     316832                PEREZ               BUSTOS               ISABEL   84    MUJER PEBI390405MNTRSS02
+265      1     301540                 VEGA           VILLANUEVA               XAVIER   45   HOMBRE VEVX780513HBSGLV01
+266      1     321450                 DIAZ            FERNANDEZ            FELICIDAD  106    MUJER DIFF171203MTCZRL01
+267      1     301958             FIGUEROA             GUERRERO             CONSUELO   17    MUJER FIGC060909MCHGRNA3
+268      1     303083             GUERRERO                 LARA                  ANA   55    MUJER GULA680621MNTRRN02
+269      1     313106              MENDOZA              NAVARRO              NATALIA   24    MUJER MENN991026MQRNVT09
+270      1     318373            GUTIERREZ              NAVARRO                PEDRO  117   HOMBRE GUNP060701HPLTVD02
+271      1     312528            GUTIERREZ               ORTEGA              ENRIQUE   55   HOMBRE GUOE681107HCHTRN01
+272      1     301214           VILLANUEVA                SOLIS                CLARA  116    MUJER VISC070708MMSLLL01
+273      1     315359              CABRERA                GOMEZ              CECILIA   19    MUJER CAGC040504MOCBMCA3
+274      1     331995               RIVERA              MIRANDA                  ANA   98    MUJER RIMA250120MNEVRN01
+275      1     311964                 DIAZ               BUSTOS                TOMAS   26   HOMBRE DIBT970115HGRZSM01
+276      1     319655                PEREZ              MORALES              CECILIA   43    MUJER PEMC800720MBCRRC02
+277      1     321348             GUERRERO              MORALES                 INES   39    MUJER GUMI840114MOCRRN01
+278      1     309976              JIMENEZ                PEREZ              GUSTAVO   48   HOMBRE JIPG750921HVZMRS02
+279      1     307414                 RUIZ               ACOSTA                 PACO   82   HOMBRE RUAP410830HCHZCC01
+280      1     323410                PEREZ                 VEGA              ROBERTO   47   HOMBRE PEVR761221HASRGB07
+281      1     311357                MUNOZ                 LUNA             CONSUELO   55    MUJER MULC680606MTCNNN02
+282      1     313293              MENDOZA               RIVERA               CARLOS   75   HOMBRE MERC480506HQRNVR03
+283      1     317868                MUNOZ                 VEGA               MIRIAM   40    MUJER MUVM830416MTSNGR01
+284      1     327380                 CRUZ               SUAREZ               ISABEL    9    MUJER CUSI140316MSPRRSB2
+285      1     306761                PONCE               GUERRA                 ABEL   94   HOMBRE POGA290718HJCNRB01
+286      1     316687               ACOSTA                 RUIZ               ESTHER   70    MUJER AORE530328MNECZS02
+287      1     302606                SALAS              PAREDES             PATRICIA  117    MUJER SAPP060701MVZLRT01
+288      1     329924             FIGUEROA                PONCE                 ROSA   86    MUJER FIPR370215MCLGNS01
+289      1     316910               TORRES           VALENZUELA            MARGARITA   34    MUJER TOVM891004MNTRLR01
+290      1     308121                 LARA            RODRIGUEZ                DIANA   48    MUJER LARD750522MDFRDN02
+291      1     323125                 RUIZ              PAREDES              RICARDO   40   HOMBRE RUPR830203HGTZRC02
+292      1     316060                ROJAS              JIMENEZ                DIEGO   75   HOMBRE ROJD480928HCMJMG01
+293      1     322866                 RIOS                MUNOZ              VANESSA   70    MUJER RIMV530822MCCSNN02
+294      1     326790                GOMEZ              SALAZAR               ELVIRA   29    MUJER GOSE940304MYNMLL02
+295      1     315929                 CRUZ               ORTEGA             BENJAMIN  114   HOMBRE CUOB090919HSLRRN02
+296      1     330300                GOMEZ                SILVA              ANTONIO    8   HOMBRE GOSA150818HSLMLNB1
+297      1     330787                GOMEZ                 LUNA               OLIVER  119   HOMBRE GOLO041016HGRMNL01
+298      1     308632              DELGADO               SUAREZ              ENRIQUE    4   HOMBRE DESE191222HCLLRNB1
+299      1     328185             CASTILLO                 VEGA                CLARA   99    MUJER CAVC240315MCHSGL01
+300      1     324199                ROJAS               ORTEGA               SERGIO   54   HOMBRE ROOS690203HQTJRR01
+301      1     331088                GOMEZ                SILVA               MONICA  100    MUJER GOSM230109MNLMLN07
+302      1     329140                 DIAZ                 RIOS                JULIA  113    MUJER DIRJ100415MCHZSL02
+303      1     331478                 RIOS               ORTEGA                ANGEL    0   HOMBRE RIOA230501HZSSRNB4
+304      1     302916                 CRUZ             FIGUEROA              GUSTAVO   39   HOMBRE CUFG840606HASRGS03
+305      1     327246              BARRIOS               TORRES                 LUIS   15   HOMBRE BATL080329HTLRRSA2
+306      1     325987               GUERRA               ORTEGA                        47   HOMBRE GUO 760828HCCRRX02
+307      1     301816              PAREDES                 RUIZ               MIGUEL   18   HOMBRE PARM050205HNTRZGA2
+308      1     312031              NAVARRO              MENDOZA                 INES   12    MUJER NAMI110119MCHVNNB4
+309      1     303157            GUTIERREZ                GOMEZ                 RAUL   27   HOMBRE GUGR960408HNLTML01
+310      1     317266                LOPEZ                 LUNA                LAURA   85    MUJER LOLL380809MJCPNR02
+311      1     303720                SILVA              MORALES            ALEJANDRO   28   HOMBRE SIMA951013HOCLRL02
+312      1     330150              DELGADO              MORALES               ARTURO   66   HOMBRE DEMA570528HQTLRR02
+313      1     325664             GUERRERO               SUAREZ                  ANA   15    MUJER GUSA081016MSRRRNA1
+314      1     328915             MARTINEZ                MUNOZ               GLORIA   58    MUJER MAMG650124MTSRNL02
+315      1     316276              NAVARRO                GOMEZ                CESAR   50   HOMBRE NAGC730823HHGVMS01
+316      1     329452                 RIOS           VALENZUELA               ESTHER   96    MUJER RIVE270925MSLSLS01
+317      1     323504                LOPEZ               TORRES               LORENA  100    MUJER LOTL230917MCMPRR01
+318      1     326235            FERNANDEZ            FERNANDEZ              GUSTAVO    7   HOMBRE FEFG160120HBSRRSB1
+319      1     325423              MENDOZA                GOMEZ               LORENA   98    MUJER MEGL250113MSPNMR03
+320      1     307561              NAVARRO                PEREZ               SUSANA  105    MUJER NAPS181118MNEVRS01
+321      1     329097               RIVERA              CABRERA             ZACARIAS  105   HOMBRE RICZ180827HBSVBC01
+322      1     313346           VILLANUEVA               SUAREZ               CARLOS   30   HOMBRE VISC930916HBSLRR01
+323      1     322030            FERNANDEZ            RODRIGUEZ                ANGEL   80   HOMBRE FERA430425HSRRDN01
+324      1     323511              SALAZAR           VILLANUEVA               ULISES  112   HOMBRE SAVU110422HSPLLL02
+325      1     331219            HERNANDEZ                SOLIS              PASCUAL   45   HOMBRE HESP780908HNERLS01
+326      1     305670              DELGADO              RAMIREZ                 ABEL   71   HOMBRE DERA520212HZSLMB02
+327      1     304076              BARRIOS             MARTINEZ                PEDRO   32   HOMBRE BAMP910118HJCRRD02
+328      1     308439                SOLIS               RIVERA             PATRICIA   42    MUJER SORP811120MSPLVT01
+329      1     328378            FERNANDEZ              CABRERA              WILLIAM  101   HOMBRE FECW220524HCHRBL05
+330      1     306503              AGUILAR           VILLANUEVA                DIEGO   69   HOMBRE AUVD541212HHGGLG02
+331      1     315687                SOLIS              MIRANDA              NATALIA   30    MUJER SOMN931202MZSLRT01
+332      1     306346             FIGUEROA             FIGUEROA              ENRIQUE   33   HOMBRE FIFE900723HCLGGN05
+333      1     320751               CAMPOS               ACOSTA               ALVARO   80   HOMBRE CAAA430601HSPMCL04
+334      1     320460               CAMPOS              RAMIREZ            ALEJANDRO   16   HOMBRE CARA071010HZSMMLA1
+335      1     326433             MARTINEZ              NAVARRO               OLIVER   35   HOMBRE MANO880917HASRVL01
+336      1     325753            HERNANDEZ              JIMENEZ                 JOSE    9   HOMBRE HEJJ140815HTCRMSB1
+337      1     306213              DELGADO               ACOSTA                JUANA   96    MUJER DEAJ271227MVZLCN02
+338      1     305469              AGUILAR               ACOSTA              GERARDO   38   HOMBRE AUAG850825HVZGCR02
+339      1     311328                GOMEZ                SALAS              ENRIQUE    7   HOMBRE GOSE160621HMNMLNB2
+340      1     326509                SALAS                 LARA               TERESA  100    MUJER SALT230619MJCLRR09
+341      1     313237             GUERRERO               ACOSTA               ANGELA   53    MUJER GUAA700103MSLRCN06
+342      1     325479              MIRANDA                 VEGA                IRENE  105    MUJER MIVI180428MJCRGR01
+343      1     302158               RIVERA                SOLIS               JAVIER   62   HOMBRE RISJ610626HGTVLV09
+344      1     309016                 RIOS              SALAZAR               HECTOR   60   HOMBRE RISH630707HQTSLC02
+345      1     306811              RAMIREZ                 LUNA                PEDRO   99   HOMBRE RALP240405HQTMND04
+346      1     314044               CAMPOS               TORRES              VICENTE   97   HOMBRE CATV260930HTLMRC02
+347      1     311833            GUTIERREZ              AGUILAR                CESAR   54   HOMBRE GUAC690206HCCTGS01
+348      1     309226              SANCHEZ              JIMENEZ                DIANA    6    MUJER SAJD170824MCHNMNB1
+349      1     327831                 LUNA                 RIOS              RICARDO   43   HOMBRE LURR800513HCHNSC05
+350      1     300752                SALAS               VARGAS              ENRIQUE   76   HOMBRE SAVE470225HCLLRN02
+351      1     328372              NAVARRO              SANCHEZ               LORENA   21    MUJER NASL020228MGRVNRA2
+352      1     332220              NAVARRO             FIGUEROA             FERNANDO  118   HOMBRE NAFF051123HCCVGR02
+353      1     308908               GUERRA                SILVA               MARINA  109    MUJER GUSM140319MTCRLR02
+354      1     314077               ORTEGA                 RUIZ                IRENE   59    MUJER OERI641012MPLRZR07
+355      1     312980              SANCHEZ               CAMPOS              CECILIA  109    MUJER SACC140908MMSNMC02
+356      1     322633              CABRERA               FLORES               MIGUEL   72   HOMBRE CAFM511226HQRBLG02
+357      1     320260               VARGAS              CABRERA              GERARDO   32   HOMBRE VACG910108HDFRBR03
+358      1     321088              DELGADO              JIMENEZ               ANDRES    0   HOMBRE DEJA231031HYNLMNB2
+359      1     300533                LOPEZ               SUAREZ                FELIX   23   HOMBRE LOSF000205HZSPRLA1
+360      1     303024              NAVARRO                 CRUZ               LORENA   83    MUJER NACL400320MTLVRR03
+361      1     328170                 LUNA                MUNOZ                NADIA  123    MUJER LUMN000227MHGNND01
+362      1     302329               CAMPOS                ROJAS              ROSARIO  121    MUJER CARR020829MQTMJS08
+363      1     307538               FLORES                 VEGA                JUANA   45    MUJER FOVJ780425MOCLGN02
+364      1     319731              SALAZAR              MENDOZA               HECTOR   30   HOMBRE SAMH931224HDGLNC01
+365      1     317998                LOPEZ                 LARA                 LUIS   73   HOMBRE LOLL500222HDFPRS01
+366      1     330799             FIGUEROA                PEREZ               MIRIAM  102    MUJER FIPM210725MSRGRR02
+367      1     309744               RIVERA              DELGADO               SERGIO   58   HOMBRE RIDS650715HOCVLR03
+368      1     327291                 LARA             CASTILLO             CONSUELO  117    MUJER LACC060718MCLRSN04
+369      1     322981              PAREDES              NAVARRO               RAQUEL    2    MUJER PANR210617MNTRVQB9
+370      1     327338             CASTILLO                 DIAZ            ALEJANDRO   93   HOMBRE CADA300125HTCSZL09
+371      1     322132                 LUNA                 LARA                 LUIS   20   HOMBRE LULL031219HGTNRSA2
+372      1     306322              JIMENEZ              MENDOZA                LUISA   83    MUJER JIML400819MQRMNS01
+373      1     326054              NAVARRO               TORRES               MARINA   15    MUJER NATM080804MBCVRRA2
+374      1     311639            FERNANDEZ               VARGAS            BARTOLOME  115   HOMBRE FEVB080416HZSRRR02
+375      1     319176                PEREZ              MENDOZA               MARTIN   69   HOMBRE PEMM540114HNLRNR01
+376      1     319976            HERNANDEZ                 LARA               MIRIAM   40    MUJER HELM830505MOCRRR01
+377      1     329614                PONCE                 LUNA               ELVIRA  120    MUJER POLE030425MMSNNL01
+378      1     329671                MUNOZ                PONCE                 YAGO   98   HOMBRE MUPY250114HGRNNG02
+379      1     323035                PEREZ              MORALES             CAROLINA   89    MUJER PEMC340210MNTRRR08
+380      1     312334             MARTINEZ                 VEGA            FELICIDAD   50    MUJER MAVF731102MCSRGL01
+381      1     331070              PAREDES                 CRUZ               ULISES   22   HOMBRE PACU010806HJCRRLA7
+382      1     319664                PONCE                ROJAS               ADRIAN  111   HOMBRE PORA120827HOCNJD01
+383      1     331997               ACOSTA                 CRUZ               MONICA  117    MUJER AOCM060125MCHCRN01
+384      1     304126             MARTINEZ              PAREDES             BENJAMIN   86   HOMBRE MAPB370409HGTRRN02
+385      1     302488              SALAZAR                ROJAS              NATALIA   57    MUJER SARN660127MSRLJT02
+386      1     309867                LOPEZ                 VEGA            FELICIDAD   23    MUJER LOVF001025MCHPGLA1
+387      1     318567              PAREDES              BARRIOS               MIRIAM   27    MUJER PABM961227MZSRRR01
+388      1     330385              MIRANDA                 LARA              RICARDO   62   HOMBRE MILR611227HMNRRC03
+389      1     305413                 DIAZ           VALENZUELA               JAVIER   81   HOMBRE DIVJ420409HGTZLV03
+390      1     325492              RAMIREZ                PONCE                FELIX   68   HOMBRE RAPF550614HCSMNL03
+391      1     329937                 DIAZ             MARTINEZ               MARINA   50    MUJER DIMM730628MVZZRR03
+392      1     316679               GUERRA              CABRERA                JULIA   11    MUJER GUCJ121112MYNRBLB2
+393      1     314865               CAMPOS              MORALES                ADELA   55    MUJER CAMA680623MCMMRD01
+394      1     332526                SILVA               GUERRA                 INES   59    MUJER SIGI641223MVZLRN02
+395      1     330426                 LUNA                 DIAZ             BENJAMIN   85   HOMBRE LUDB380119HQTNZN02
+396      1     319875                 MORA               TORRES              ENRIQUE   10   HOMBRE MOTE130106HBSRRNB2
+397      1     309581                 RIOS            RODRIGUEZ              CECILIA   74    MUJER RIRC490814MSLSDC01
+398      1     316700              SANCHEZ               FLORES                        10    MUJER SAF 130914MCCNLXB4
+399      1     310148            GUTIERREZ              NAVARRO                PAULA  110    MUJER GUNP130316MCLTVL02
+400      1     314252                MUNOZ                 DIAZ               XAVIER    9   HOMBRE MUDX141113HDGNZVB3
+401      1     300813            FERNANDEZ              RAMIREZ               GLORIA  109    MUJER FERG140425MCMRML02
+402      1     301032              RAMIREZ               TORRES               ANGELA   58    MUJER RATA650528MTLMRN02
+403      1     332244              SANCHEZ                GOMEZ              GUSTAVO  107   HOMBRE SAGG160403HTLNMS01
+404      1     309389              CABRERA               RIVERA               MONICA   89    MUJER CARM340310MPLBVN01
+405      1     332456                PEREZ                 LARA              ROBERTO  110   HOMBRE PELR130520HASRRB02
+406      1     301920               VARGAS           VILLANUEVA               ARTURO   80   HOMBRE VAVA431202HNTRLR01
+407      1     322071               SUAREZ               ORTEGA               ARTURO    5   HOMBRE SUOA180628HCSRRRB2
+408      1     308310                 LARA                SILVA               LORENA   99    MUJER LASL241106MPLRLR02
+409      1     321434                PONCE               BUSTOS                 LUIS   34   HOMBRE POBL890326HTSNSS02
+410      1     322101              CABRERA              NAVARRO               SILVIA   14    MUJER CANS090207MMCBVLA1
+411      1     319224              MENDOZA             GUERRERO               SERGIO   30   HOMBRE MEGS930122HDGNRR03
+412      1     302489                SALAS              BARRIOS               CARLOS   94   HOMBRE SABC291027HGTLRR01
+413      1     328165                SALAS               ACOSTA               CARMEN   90    MUJER SAAC330112MJCLCR02
+414      1     314938             MARTINEZ                GOMEZ            FELICIDAD   56    MUJER MAGF670321MYNRML02
+415      1     307691              SALAZAR               BUSTOS              NATALIA   77    MUJER SABN461122MCCLST02
+416      1     303726                SILVA                 VEGA               MIRIAM   49    MUJER SIVM741012MSRLGR02
+417      1     306828               ACOSTA                 LARA                PAULA  102    MUJER AOLP210124MSPCRL03
+418      1     316651              BARRIOS             MARTINEZ                DIEGO   41   HOMBRE BAMD820322HBCRRG02
+419      1     312229              RAMIREZ               SUAREZ               ARTURO   26   HOMBRE RASA970105HBCMRR02
+420      1     314575              JIMENEZ              PAREDES               ADRIAN   51   HOMBRE JIPA720414HSLMRD06
+421      1     318486                SILVA                 LUNA                 SARA   98    MUJER SILS250411MQRLNR02
+422      1     320483              DELGADO                 MORA              VANESSA   42    MUJER DEMV810209MHGLRN03
+423      1     302241               SUAREZ               GUERRA            BARTOLOME   99   HOMBRE SUGB240429HCHRRR01
+424      1     302876               TORRES                 VEGA             BENJAMIN    1   HOMBRE TOVB220404HDGRGNB8
+425      1     322321               GUERRA                 LUNA                PEDRO   59   HOMBRE GULP640809HNTRND05
+426      1     318820              JIMENEZ                 LARA                LUISA   77    MUJER JILL460518MMCMRS02
+427      1     329117                 LARA             CASTILLO            BARTOLOME   14   HOMBRE LACB090921HCHRSRA8
+428      1     311449            RODRIGUEZ                SOLIS                 PACO   77   HOMBRE ROSP461031HQRDLC02
+429      1     331405                 RIOS            FERNANDEZ                       101   HOMBRE RIF 220825HTCSRX01
+430      1     316627                SILVA              RAMIREZ                JORGE   81   HOMBRE SIRJ421204HVZLMR02
+431      1     307227                 LUNA              CABRERA               TERESA  122    MUJER LUCT010114MBCNBR05
+432      1     309739                 RIOS                MUNOZ              ANTONIO  119   HOMBRE RIMA041013HHGSNN01
+433      1     310429               VARGAS                 VEGA              ROBERTO   64   HOMBRE VAVR591118HYNRGB01
+434      1     316218              SANCHEZ                 LARA             ZACARIAS   78   HOMBRE SALZ450605HMSNRC03
+435      1     323297                PEREZ               VARGAS                DIANA  110    MUJER PEVD130221MCHRRN01
+436      1     311711              SALAZAR              JIMENEZ               NESTOR   17   HOMBRE SAJN060507HCSLMSA2
+437      1     306905             FIGUEROA              MIRANDA            FELICIDAD   85    MUJER FIMF380918MPLGRL02
+438      1     306116              MENDOZA                MUNOZ            BARTOLOME   72   HOMBRE MEMB510428HCMNNR02
+439      1     327289              MENDOZA                 RIOS               ELVIRA   94    MUJER MERE290529MGRNSL02
+440      1     301218                 LUNA              CABRERA                 PACO   93   HOMBRE LUCP300925HDGNBC03
+441      1     324318            FERNANDEZ                 LARA                JUANA   25    MUJER FELJ980810MQTRRN02
+442      1     319556                 RUIZ             FIGUEROA                 OLGA    0    MUJER RUFO230331MSPZGLB2
+443      1     318898                ROJAS               ACOSTA               ANDRES  103   HOMBRE ROAA200601HSLJCN02
+444      1     325322              CABRERA            FERNANDEZ                SOFIA   44    MUJER CAFS790213MTSBRF02
+445      1     330444              BARRIOS                 MORA               MONICA   34    MUJER BAMM890808MGRRRN03
+446      1     300463               BUSTOS                 RIOS                DIEGO   25   HOMBRE BURD980110HDGSSG02
+447      1     308765                PONCE              PAREDES                 ROSA   74    MUJER POPR491108MNLNRS01
+448      1     329548               ORTEGA                LOPEZ             ZACARIAS   30   HOMBRE OELZ931106HCMRPC02
+449      1     302536                 VEGA              MIRANDA              CECILIA    8    MUJER VEMC151227MSLGRCB8
+450      1     301213                 CRUZ                 VEGA             VICTORIA   95    MUJER CUVV280825MNERGC01
+451      1     316560                SOLIS            RODRIGUEZ                IRENE   98    MUJER SORI251208MGTLDR07
+452      1     324932                 LUNA              NAVARRO               ADRIAN   83   HOMBRE LUNA400529HVZNVD04
+453      1     309368              RAMIREZ           VILLANUEVA                LAURA   40    MUJER RAVL830311MGRMLR02
+454      1     324044               BUSTOS                SALAS                SOFIA  112    MUJER BUSS110326MDFSLF09
+455      1     307622              SANCHEZ                 VEGA               MARINA    8    MUJER SAVM151211MMCNGRB2
+456      1     329776               TORRES                 RUIZ               SUSANA   90    MUJER TORS331216MSLRZS04
+457      1     302473              BARRIOS               ORTEGA                DIEGO   64   HOMBRE BAOD590428HNTRRG09
+458      1     330397                PEREZ                SOLIS             BENJAMIN   13   HOMBRE PESB100212HCHRLNB2
+459      1     330301               VARGAS             MARTINEZ                 RAUL   84   HOMBRE VAMR390712HSRRRL01
+460      1     315509              MIRANDA              JIMENEZ                SOFIA   71    MUJER MIJS521222MDGRMF02
+461      1     304684              JIMENEZ              AGUILAR                 ABEL   56   HOMBRE JIAA670620HNTMGB02
+462      1     319893              AGUILAR               CAMPOS             PATRICIA   19    MUJER AUCP040208MNLGMTA1
+463      1     329719                LOPEZ               BUSTOS                 ABEL   11   HOMBRE LOBA120220HSRPSBB3
+464      1     320472              NAVARRO              MIRANDA                JUANA   60    MUJER NAMJ630626MMSVRN01
+465      1     307861              NAVARRO             CASTILLO            FELICIDAD  121    MUJER NACF021229MZSVSL02
+466      1     315101           VALENZUELA                 VEGA                 PACO   92   HOMBRE VAVP310721HSRLGC01
+467      1     326074                PONCE               VARGAS                MARCO  106   HOMBRE POVM171121HBSNRR01
+468      1     305670               BUSTOS              BARRIOS              CECILIA   29    MUJER BUBC940812MTSSRC02
+469      1     305787               TORRES              RAMIREZ            BARTOLOME   41   HOMBRE TORB821008HDGRMR09
+470      1     317634                 MORA                GOMEZ                BELEN  114    MUJER MOGB090506MQTRML02
+471      1     302128               RIVERA              RAMIREZ                ELENA   75    MUJER RIRE481020MTSVML02
+472      1     309517               SUAREZ            GUTIERREZ                 RAUL   17   HOMBRE SUGR060428HQTRTLA2
+473      1     331163             GUERRERO              CABRERA             CAROLINA   16    MUJER GUCC070710MNTRBRA2
+474      1     301110              SANCHEZ            FERNANDEZ             ZACARIAS   10   HOMBRE SAFZ130411HDGNRCB1
+475      1     324168              SALAZAR                SALAS               ELVIRA   25    MUJER SASE980504MSPLLL01
+476      1     311777                 VEGA               GUERRA               ANDRES   13   HOMBRE VEGA100921HGTGRNB1
+477      1     300084             CASTILLO                ROJAS                CESAR   96   HOMBRE CARC270920HTCSJS05
+478      1     306509                PEREZ                LOPEZ               ADRIAN  116   HOMBRE PELA071205HMCRPD09
+479      1     306610               SUAREZ                 RIOS               FELIPE   15   HOMBRE SURF080913HGTRSLA2
+480      1     330968             CASTILLO              MIRANDA              GERARDO   71   HOMBRE CAMG520924HVZSRR03
+481      1     319372                 RIOS             GUERRERO              BEATRIZ  110    MUJER RIGB130108MMSSRT01
+482      1     312257             MARTINEZ               VARGAS                        23    MUJER MAV 000111MCMRRXA1
+483      1     304999               ORTEGA                SILVA               ISABEL    2    MUJER OESI210224MQTRLSB2
+484      1     329262                SILVA                GOMEZ              VANESSA    2    MUJER SIGV210226MQTLMNB2
+485      1     309866             FIGUEROA              MORALES                PEDRO    2   HOMBRE FIMP210408HNEGRDB3
+486      1     305007                ROJAS             CASTILLO                IRENE   43    MUJER ROCI800319MSPJSR02
+487      1     321567            FERNANDEZ                 MORA              ROSARIO  101    MUJER FEMR220704MMSRRS03
+488      1     318082               FLORES              MENDOZA                JULIA  110    MUJER FOMJ130119MQRLNL02
+489      1     321946                LOPEZ               ORTEGA              GERARDO   18   HOMBRE LOOG051001HNEPRRA9
+490      1     321752                 CRUZ                SOLIS                 ABEL  119   HOMBRE CUSA040710HMNRLB01
+491      1     311513               TORRES               GUERRA             CAROLINA   95    MUJER TOGC280707MMNRRR01
+492      1     303959                 LARA              DELGADO             PATRICIA   63    MUJER LADP600620MYNRLT01
+493      1     330860                 CRUZ               SUAREZ           INMACULADA   15    MUJER CUSI081023MSLRRNA1
+494      1     332192                 LARA              CABRERA               MIRIAM   68    MUJER LACM550916MDFRBR03
+495      1     324439                SALAS                SOLIS                LUISA   17    MUJER SASL060107MJCLLSA2
+496      1     304020              BARRIOS                SILVA             BENJAMIN  111   HOMBRE BASB120228HBSRLN01
+497      1     331061                SOLIS               TORRES              QUIRINO   18   HOMBRE SOTQ050811HCMLRRA3
+498      1     321810                LOPEZ               GUERRA               ADRIAN   30   HOMBRE LOGA930408HCCPRD01
+499      1     322207                 DIAZ             FIGUEROA               MONICA   62    MUJER DIFM610221MQTZGN07
+500      1     300036                GOMEZ                MUNOZ            ALEJANDRO  115   HOMBRE GOMA081122HSPMNL02

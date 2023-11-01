@@ -249,7 +249,6 @@ int main()
             sprintf(cultimoDigito, "%d", ultimoDigito);
             curp[17] = cultimoDigito[0];
             curp[18] = '\0';
-
             if (antisonante(curp, antisonantes, sizeof(antisonantes) / sizeof(antisonantes[0])))
             {
                 curp[1] = 'X';
