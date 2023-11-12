@@ -1,0 +1,2 @@
+No. status  matricula     apellido paterno     apellido materno               nombre edad     sexo
+ 76      0     304053                 MORA              AGUILAR               CARLOS   17   HOMBRE 
