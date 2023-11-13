@@ -29,7 +29,7 @@ int main(int arg, char *args[])
         } while (!feof(fa));
         fclose(fa);
 
-        return posicion-1;
+        return posicion;
     }
     else
     {

@@ -36,14 +36,13 @@ void apellidoPaterno(Talumns reg[], int i);
 void apellidoMaterno(Talumns reg[], int i);
 void nombre(Talumns reg[], int i);
 void edad(Talumns reg[], int i, int li, int ls);
-// void alumnoManual(Talumns reg[], int i);
 int existeValor(Talumns reg[], int n, int numero);
 void eliminarRegistro(Talumns reg[], int posicion);
 void buscarElemento(Talumns reg[], int posicion, int bandera);
 void ordenarAscendente(Talumns reg[], int n);
 int busquedaBinaria(Talumns reg[], int izquierda, int derecha);
 void imprimirRegistro(Talumns reg[], int posicion);
-void imprimirbuscado(Talumns reg[], int posicion);
+void imprimirBuscado(Talumns reg[], int posicion);
 
 void cambiar(Talumns reg[], int i, int j);
 int particion(Talumns reg[], int menor, int mayor);
@@ -52,6 +51,7 @@ void archivoTexto(Talumns reg[], int posicion);
 void numeroRegistros(void);
 void generarTxt(Talumns reg[], int posicion);
 int cargarArchivo(Talumns reg[], int posicion, char archivo[]);
+void inactivos(Talumns reg[], int posicion);
 
 
 int main()
@@ -125,7 +125,6 @@ void menu()
             else
             {
                 registroAleatorio(reg, posicion, numero);
-                // imprimirAleatorio(reg, posicion, numero);
                 printf("llenado de 10 registros exitoso\n");
                 posicion= posicion + numero;
                 bandera = 0;
@@ -160,7 +159,6 @@ void menu()
             break;
 
             case 7:
-            // archivoTexto(reg, posicion);
             generarTxt(reg, posicion);
             break;
 
@@ -169,7 +167,7 @@ void menu()
             break;
             
             case 9:
-
+            inactivos(reg, posicion);
             break;
         } 
         system("pause");
@@ -188,6 +186,7 @@ int cargarArchivo(Talumns reg[], int posicion, char archivo[])
         do
         {
             fscanf(fa, "%d.- %d %s %s %s %d %s", &num, &registro.matricula, registro.nombre, registro.apellidoPaterno, registro.apellidoMaterno, &registro.edad, sex);
+            registro.status = 1;
             if(strcmp(sex,"HOMBRE")==0)
             {
                 registro.sexo=1;
@@ -217,6 +216,7 @@ int cargarArchivo(Talumns reg[], int posicion, char archivo[])
             posicion++;
         } while (!feof(fa));
         fclose(fa);
+        printf("archivo cargado\n");
     }
     else
     {
@@ -251,27 +251,25 @@ void generarTxt(Talumns reg[], int posicion)
     int i;
     FILE *fa;
     char archivo[30];
-    // do
-    // {
-        validacionArchivo("escribe como quieres nombrar tu archivo", archivo, 30);
-        // sinEspacio(archivo);
-    // }while();
+    
+    validacionArchivo("escribe como quieres nombrar tu archivo", archivo, 30);
 
     strcat(archivo, ".txt");
     fa = fopen(archivo, "w");
 
-    fprintf(fa, "%6s %10s %10s %15s %15s %5s %8s\n", "No.", "matricula", "nombre", "ap Paterno", "ap Materno", "edad", "sexo");
-
     for(i =0; i<posicion; i++)
     {
-        fprintf(fa, "%6d %10d %10s %15s %15s %5d", i+1, reg[i].matricula, reg[i].nombre, reg[i].apellidoPaterno, reg[i].apellidoMaterno, reg[i].edad);
-        if(reg[i].sexo == 1)
+        if(reg[i].status == 1)
         {
-            fprintf(fa, " %8s\n", "HOMBRE");
-        }
-        else
-        {
-            fprintf(fa, " %8s\n", "MUJER");
+            fprintf(fa, "%6d.- %10d %10s %15s %15s %5d", i+1, reg[i].matricula, reg[i].nombre, reg[i].apellidoPaterno, reg[i].apellidoMaterno, reg[i].edad);
+            if(reg[i].sexo == 1)
+            {
+                fprintf(fa, " %8s\n", "HOMBRE");
+            }
+            else
+            {
+                fprintf(fa, " %8s\n", "MUJER");
+            }
         }
     }
 
@@ -467,36 +465,6 @@ void edad(Talumns reg[], int posicion, int li, int ls)
     reg[posicion].edad = (rand()%rango)+li;
 }
 
-// void alumnoManual(Talumns reg[], int posicion)
-// {
-//     int existe;
-//     char paterno[20];
-//     char materno[20];
-//     char nombre[20];
-
-//     reg[posicion].status= 1;
-//     do{
-//     reg[posicion].matricula = validacionNumero("dame tu matricula", 300000, 399999);
-//     existe = existeValor(reg, posicion, reg[posicion].matricula);
-//     if(existe != -1)
-//     {
-//         printf("la matricula ya existe.\npor favor introduce otra\n");
-//     }
-//     }while(existe != -1);
-    
-//     validacionTexto("dame tu apellido paterno", paterno, 20);
-//     strcpy(reg[posicion].apellidoPaterno, paterno);
-
-//     validacionTexto("dame tu apellido paterno", materno, 20);
-//     strcpy(reg[posicion].apellidoMaterno, materno);
-
-//     validacionTexto("dame tu nombre", nombre, 20);
-//     strcpy(reg[posicion].nombre, nombre);
-
-//     reg[posicion].edad = validacionNumero("dame tu edad", 17, 50);
-//     reg[posicion].sexo = validacionNumero("dame tu sexo (1- hombre. 2- mujer)", 1, 2);
-// }
-
 int existeValor(Talumns reg[], int n, int numero)
 {
     int i; 
@@ -531,6 +499,7 @@ void eliminarRegistro(Talumns reg[], int posicion)
     {
         printf("esta matricula no esta en el registro\n");
     }
+    imprimirBuscado(reg, posicion);
 }
 
 void buscarElemento(Talumns reg[], int posicion, int bandera)
@@ -553,7 +522,7 @@ void buscarElemento(Talumns reg[], int posicion, int bandera)
 
     if(buscar != -1)
     {
-        imprimirbuscado(reg, buscar);
+        imprimirBuscado(reg, buscar);
     }
 }
 
@@ -563,21 +532,22 @@ void imprimirRegistro(Talumns reg[], int posicion)
     printf("%3s %10s %20s %20s %20s %4s %8s\n", "No.", "matricula", "nombre", "apellido paterno", "apellido materno", "edad", "sexo");
     for(i=0; i<posicion; i++)
     {
-        
-        printf("%3d.- %10d %20s %20s %20s %4d", i+1, reg[i].matricula ,reg[i].nombre, reg[i].apellidoPaterno, reg[i].apellidoMaterno, reg[i].edad);
-        if(reg[i].sexo == 1)
+        if(reg[i].status == 1)
         {
-            printf(" %8s\n", "HOMBRE");
+            printf("%3d %10d %20s %20s %20s %4d", i+1, reg[i].matricula ,reg[i].nombre, reg[i].apellidoPaterno, reg[i].apellidoMaterno, reg[i].edad);
+            if(reg[i].sexo == 1)
+            {
+                printf(" %8s\n", "HOMBRE");
+            }
+            else
+            {
+                printf(" %8s\n", "MUJER");
+            }
         }
-        else
-        {
-            printf(" %8s\n", "MUJER");
-        }
-        
     }
 }
 
-void imprimirbuscado(Talumns reg[], int posicion)
+void imprimirBuscado(Talumns reg[], int posicion)
 {
     printf("numero de registro: ");
     printf("%d\n", posicion + 1);
@@ -707,7 +677,7 @@ void archivoTexto(Talumns reg[], int posicion)
         }
         else
         {
-            fprintf(texto2, "%3d %6d %10d %20s %20s %20s %4d", i+1, reg[i].status, reg[i].matricula, reg[i].apellidoPaterno, reg[i].apellidoMaterno, reg[i].nombre, reg[i].edad);
+            fprintf(texto2, "%3d %10d %20s %20s %20s %4d", i+1, reg[i].matricula, reg[i].apellidoPaterno, reg[i].apellidoMaterno, reg[i].nombre, reg[i].edad);
             if(reg[i].sexo == 1)
             {
                 fprintf(texto2, " %8s ", "HOMBRE");
@@ -726,3 +696,36 @@ void archivoTexto(Talumns reg[], int posicion)
     return;
 }
 
+void inactivos(Talumns reg[], int posicion)
+{
+    int j;
+    char archivo[30];
+    FILE *fb;
+    validacionArchivo("escribe como quieres nombrar tu archivo", archivo, 30);
+
+    strcat(archivo, ".txt");
+    fb = fopen(archivo, "w");
+
+    for(j=0; j<posicion; j++)
+    {
+        if(reg[j].status == 0)
+        {
+            fprintf(fb, "%3d %10d %10s %15s %15s %4d", j+1, reg[j].matricula, reg[j].nombre, reg[j].apellidoPaterno, reg[j].apellidoMaterno, reg[j].edad);
+            printf("%3d %10d %10s %15s %15s %4d", j+1, reg[j].matricula, reg[j].nombre, reg[j].apellidoPaterno, reg[j].apellidoMaterno, reg[j].edad);
+            if(reg[j].sexo == 1)
+            {
+                fprintf(fb, " %8s ", "HOMBRE");
+                printf(" %8s", "HOMBRE");
+            }
+            else
+            {
+                fprintf(fb, " %8s", "MUJER");
+                printf(" %8s \n", "MUJER");
+            }
+            fprintf(fb, "\n");
+            printf("\n");
+            j++;
+        }
+    }
+    fclose(fb);
+}
