@@ -28,7 +28,6 @@ void msg(void);
 
 void registroAleatorio(Talumns reg[], int i, int numero);
 void imprimirAleatorio(Talumns reg[], int posicion, int n);
-void imprimirUnAlumno(Talumns reg[], int posicion);
 void sexo(Talumns reg[], int i, int li, int ls);
 void status(Talumns reg[], int i);
 void matricula(Talumns reg[], int li, int ls, int i);
@@ -293,20 +292,6 @@ void imprimirAleatorio(Talumns reg[], int posicion, int n)
         {
             printf(" %8s\n", "MUJER");
         }
-    }
-}
-
-void imprimirUnAlumno(Talumns reg[], int posicion)
-{
-    printf("%3s %6s %10s %20s %20s %20s %8s\n", "No.", "status", "matricula", "apellido paterno", "apellido materno", "nombre", "sexo");
-    printf("%3d %6d %10d %20s %20s %20s", posicion+1, reg[posicion].status, reg[posicion].matricula, reg[posicion].apellidoPaterno, reg[posicion].apellidoMaterno, reg[posicion].nombre);
-    if(reg[posicion].sexo == 1)
-    {
-        printf(" %8s\n", "HOMBRE");
-    }
-    else
-    {
-        printf(" %8s\n", "MUJER");
     }
 }
 
