@@ -778,50 +778,6 @@ void quicksort(Talumns reg[], int menor, int mayor)
     }
 }
 
-// void archivoTexto(Talumns reg[], int posicion)
-// {
-//     FILE *texto = fopen("C:\\Users\\elvan\\Downloads\\uabc_3_sem\\programacion estructurada\\repositorio\\actividad12\\activos.txt", "w");
-//     FILE *texto2 = fopen("C:\\Users\\elvan\\Downloads\\uabc_3_sem\\programacion estructurada\\repositorio\\actividad12\\inactivos.txt", "w");
-
-//     int i;
-//     fprintf(texto, "%3s %6s %10s %20s %20s %20s %4s %8s\n", "No.", "status", "empleado", "apellido paterno", "apellido materno", "nombre", "edad", "sexo");
-//     fprintf(texto2, "%3s %6s %10s %20s %20s %20s %4s %8s\n", "No.", "status", "empleado", "apellido paterno", "apellido materno", "nombre", "edad", "sexo");
-//     for(i=0; i<posicion; i++)
-//     {
-//         if(reg[i].status == 1)
-//         {
-//             fprintf(texto, "%3d %6d %10d %20s %20s %20s %4d", i+1, reg[i].status, reg[i].key, reg[i].apellidoPaterno, reg[i].apellidoMaterno, reg[i].nombre, reg[i].edad);
-//             if(reg[i].sexo == 1)
-//             {
-//                 fprintf(texto, " %8s ", "HOMBRE");
-//             }
-//             else
-//             {
-//                 fprintf(texto, " %8s ", "MUJER");
-//             }
-//             fprintf(texto, "\n");
-//         }
-//         else
-//         {
-//             fprintf(texto2, "%3d %10d %20s %20s %20s %4d", i+1, reg[i].key, reg[i].apellidoPaterno, reg[i].apellidoMaterno, reg[i].nombre, reg[i].edad);
-//             if(reg[i].sexo == 1)
-//             {
-//                 fprintf(texto2, " %8s ", "HOMBRE");
-//             }
-//             else
-//             {
-//                 fprintf(texto2, " %8s ", "MUJER");
-//             }
-//             fprintf(texto2, "\n");
-//         }
-//     }
-
-//     fclose(texto);
-//     fclose(texto2);
-
-//     return;
-// }
-
 void inactivos(Talumns reg[], int posicion)
 {
     int j;
