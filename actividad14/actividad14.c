@@ -1,5 +1,5 @@
 // Hernandez Ceseña Ivan Fernando  373077
-// 07/11/23
+// 26/11/23
 // 1.- AGREGAR
 // 2.- ELIMINAR 
 // 3.- BUSCAR 
@@ -11,437 +11,289 @@
 // 0.- SALIR
 // HCIF_ACT14_932
 
-#include "ivan.h"
 
-#define N 5000
+#include "ivan.h"
 
 typedef int Tkey;
 
-typedef struct _alumnos{
+typedef struct _work{
     int status;
     Tkey key;
-    char apellidoPaterno[50];
-    char apellidoMaterno[50];
     char nombre[30];
-    char posTrabajo[30];
+    char apPat[50];
+    char apMat[50];
+    char sexo[15];
+    char puesto[30];
     char estado[30];
     int edad;
-    int sexo;
-    Tkey cellPhone; } Talumns;
+    Tkey celuar;
+} Twrkr;
 
+typedef struct index{
+    Tkey llave;
+    int  consecutivo;
+} Tindex;
 
-void menu(void);
-void msg(void);
+void menu(int n);
+int cargar(Twrkr reg[], Tindex reg2[], int i);
+void agregar(Twrkr reg[], Tindex reg2[], int posicion, int n);
+void eliminar(Twrkr reg[], Tindex reg2[], int posicion, int ordenar);
 
-void registroAleatorio(Talumns reg[], int i, int numero);
-void sexo(Talumns reg[], int i, int li, int ls);
-void status(Talumns reg[], int i);
-void matricula(Talumns reg[], int li, int ls, int i);
-void apellidoPaterno(Talumns reg[], int i);
-void apellidoMaterno(Talumns reg[], int i);
-void nombre(Talumns reg[], int i);
-void edad(Talumns reg[], int i, int li, int ls);
-int existeValor(Talumns reg[], int n, int numero);
-void eliminarRegistro(Talumns reg[], int posicion);
-void buscarElemento(Talumns reg[], int posicion, int bandera);
-void ordenarAscendente(Talumns reg[], int n);
-int busquedaBinaria(Talumns reg[], int izquierda, int derecha);
-void imprimirRegistro(Talumns reg[], int posicion);
-void imprimirBuscado(Talumns reg[], int posicion);
+void imprimir(Twrkr reg[], int posicion);
+void imprimir1(Twrkr reg[], int posicion);
+void imprimirReg2(Tindex reg[], int posicion);
+void imprimirReg2_1(Tindex reg[], int posicion);
 
-void cambiar(Talumns reg[], int i, int j);
-int particion(Talumns reg[], int menor, int mayor);
-void quicksort(Talumns reg[], int menor, int mayor);
-void archivoTexto(Talumns reg[], int posicion);
-void numeroRegistros(void);
-void generarTxt(Talumns reg[], int posicion);
-void inactivos(Talumns reg[], int posicion);
-void editarRegistro(Talumns reg[], int posicion, int bandera);
-
-void mostrarArchivoTxt(int posicion, char archivo[]);
-void imprimirRegistroTxt(Talumns reg[], int i, int posicion);
-void crearArchivoBinario(Talumns reg[], int posicion);
-int cargarArchivoBinario(Talumns reg[], int posicion, int maximo);
-
+void sexo(Twrkr reg[], int i, int li, int ls);
+void status(Twrkr reg[], int i);
+void matricula(Twrkr reg[], Tindex reg2[], int li, int ls, int posicion);
+void apellidoPaterno(Twrkr reg[], int i);
+void apellidoMaterno(Twrkr reg[], int i);
+void nombre(Twrkr reg[], int i);
+void edad(Twrkr reg[], int i, int li, int ls);
+void state(Twrkr reg[], int posicion, int li, int ls);
+void jobPossition(Twrkr reg[], int posicion, int li, int ls);
+int existeValor(Twrkr reg[], int n, int numero);
+int existeValor2(Tindex reg2[], int n, int numero);
+int busquedaBinaria(Tindex reg2[], int izquierda, int derecha);
 
 
 int main()
 {
-    srand(time(NULL));
+    int contador =0; ///////
+    char archivo[30]= "datos";
+    char parametros[30];
+
     system("gcc.exe archivoExterno.c -o archivoExterno");
-    menu();
+    sprintf(parametros, "archivoExterno.exe %s", archivo);
+    contador = system(parametros);
+    contador = contador * 1.25;
+    menu(contador);
+    return 0;
 }
-
-
 
 void msg()
 {
     printf("MENU\n");
-    printf("1) agregar 100 registros aleatorios.\n");
-    printf("2) editar registro.\n");
-    printf("3) eliminar registro\n");
-    printf("4) buscar.\n");
-    printf("5) ordenar\n");
-    printf("6) imprimir registros.\n");
-    printf("7) generar archivo\n");
-    printf("8) ver archivo de texto\n");
-    printf("9) generar archivo binario\n");
-    printf("10) cargar archivo binario\n");
-    printf("11) mostrar eliminados\n");
-    printf("12) salir\n");
+    printf("1) agregar\n");
+    printf("2) eliminar\n");
+    printf("3) buscar\n");
+    printf("4) ordenar\n");
+    printf("5) imprimir registro archivo original\n");
+    printf("6) imprimir registro archivo original\n");
+    printf("7) generar archivo de texto\n");
+    printf("8) empaquetar\n");
+    printf("9) salir\n");
 }
 
-void menu()
+void menu(int n)
 {
+    printf("%d\n", n);
+    Twrkr reg[n];
+    Tindex reg2[n];
+    int posicion = 0;
     int op;
-    int posicion=0, bandera=0, cargar = 0;
-    Talumns reg[N];
-    char nombretxt[30];
-    int numero = 100;
-    
-    
-    do{
-        system("cls");
+    int inc = 100;
+    int ordenar = 0;
+
+    posicion = cargar(reg, reg2, posicion);
+    // imprimir(reg, posicion);
+    imprimirReg2(reg2, posicion);
+
+    do
+    {
         msg();
-        op= validacionNumero("elije una opcion", 1, 12);
+        op = validacionNumero("elije una opcion", 1, 9);
+
         switch(op)
         {
             case 1:
-            if((posicion + numero) > N)
+            if(posicion + inc > n)
             {
-                numero = N - posicion;
+                inc = n - posicion;
             }
-            if(numero == 0)
+            if(inc == 0)
             {
-                printf("el registro esta lleno\n");
+                printf("registro lleno\n");
             }
             else
             {
-                registroAleatorio(reg, posicion, numero);
-                printf("llenado de 100 registros exitoso\n");
-                posicion= posicion + numero;
-                bandera = 0;
+                agregar(reg, reg2, posicion, inc);
+                // imprimir1(reg, posicion);
+                imprimirReg2_1(reg2, posicion);
+                posicion = posicion + inc;
             }
             break;
 
             case 2:
-            editarRegistro(reg, posicion, bandera);
-            break;
-
-            case 3:
-            eliminarRegistro(reg, posicion);
-            break;
-
-            case 4:
-            buscarElemento(reg, posicion, bandera);
-            break;
-
-            case 5:
-            if(posicion > 500)
-            {
-                printf("quicksort\n");
-                quicksort(reg, 0, posicion-1);
-            }
-            else
-            {
-                printf("bubblesort\n");
-                ordenarAscendente(reg, posicion);
-            }
-            bandera = 1;
-            break;
-
-            case 6:
-            printf("registro\n");
-            imprimirRegistro(reg, posicion);
-            break;
-
-            case 7:
-            generarTxt(reg, posicion);
-            break;
-
-            case 8:
-            validacionArchivo("dame el nombre del archivo que quieres leer", nombretxt, 30);
-            mostrarArchivoTxt(posicion, nombretxt);
-            break;
-            
-            case 9:
-            crearArchivoBinario(reg, posicion);
-            bandera = 0;
-            break;
-
-            case 10:
-            if(cargar == 1)
-            {
-                printf("el archivo binario solo se puede cargar una vez");
-            }
-            else
-            {
-                posicion = cargarArchivoBinario(reg, posicion, N);
-                cargar =1;
-            }
-            break;
-
-            case 11:
-            inactivos(reg, posicion);
+            eliminar(reg, reg2, posicion, ordenar);
             break;
         } 
-        system("pause");
-    }while(op != 12); 
+    } while (op != 9);
 }
 
-int menuEditar()
+int cargar(Twrkr reg[], Tindex reg2[], int i)
 {
-    int op;
-    printf("1) nombre\n");
-    printf("2) apellido paterno\n");
-    printf("3) apellido materno\n");
-    printf("4) edad\n");
-    printf("5) sexo\n");
-    op = validacionNumero("elije la opcion que deseas modificar", 1, 5);
-    return op;
-}
+    FILE *archivo = fopen("datos.dat", "rb");
+    Twrkr registro;
 
-void editarRegistro(Talumns reg[], int posicion, int bandera)
-{
-    int encontrado, editar, num;
-    char nom[30];
-    char apPat[30];
-    char apMat[30];
-
-    if(bandera == 1)
+    if(archivo)
     {
-        encontrado = busquedaBinaria(reg, 0, posicion - 1);
-        printf("%d\n", encontrado);
-    }
-    else
-    {
-        num = validacionNumero("que matricula buscas?", 300000, 399999);
-        encontrado = existeValor(reg, posicion, num);
-    }
-
-    if(encontrado == -1)
-    {
-        printf("el usuario no existe\n");
-    }
-    else
-    {
-        imprimirBuscado(reg, encontrado);
-        editar = menuEditar();
-        if(editar == 1)
+        // Twrkr registro;
+        while(fread(&registro, sizeof(Twrkr), 1, archivo))
         {
-            validacionTexto("dame el nuevo nombre", nom, 30);
-            strcpy(reg[encontrado].nombre, nom);
+            reg[i] = registro;
+            reg2[i].consecutivo = i;
+            reg2[i].llave = registro.key;
+            i++;
+        }
+    }
+    else
+    {
+        printf("error al abrir el archivo\n");
+    }
+    fclose(archivo);
+    return i;
+}
+
+void imprimir(Twrkr reg[], int posicion)
+{
+    int i;
+
+    for(i = 0; i < posicion; i++)
+    {
+        printf("%6d %2d %8d %20s %20s %20s %15s %20s %20s %4d\n", 
+        i, reg[i].status, reg[i].key, reg[i].nombre, 
+        reg[i].apPat, reg[i].apMat, reg[i].sexo, reg[i].puesto, 
+        reg[i].estado, reg[i].edad);
+    }
+}
+
+void imprimir1(Twrkr reg[], int posicion)
+{
+    int i;
+
+    for(i = posicion; i < posicion + 100 ; i++)
+    {
+        printf("%6d %2d %8d %20s %20s %20s %15s %20s %20s %4d\n", 
+        i, reg[i].status, reg[i].key, reg[i].nombre, 
+        reg[i].apPat, reg[i].apMat, reg[i].sexo, reg[i].puesto, 
+        reg[i].estado, reg[i].edad);
+    }
+}
+
+void imprimirReg2_1(Tindex reg[], int posicion)
+{
+    int i;
+
+    for(i=posicion; i < (posicion + 100); i++)
+    {
+        printf("%6d %10d\n", reg[i].consecutivo, reg[i].llave);
+    }
+}
+
+void imprimirReg2(Tindex reg[], int posicion)
+{
+    int i;
+
+    for(i=0; i < posicion; i++)
+    {
+        printf("%6d %10d\n", reg[i].consecutivo, reg[i].llave);
+    }
+}
+
+void eliminar(Twrkr reg[], Tindex reg2[], int posicion, int ordenar)
+{
+    int encontrado, elim;
+    if(ordenar == 1)
+    {
+        encontrado = busquedaBinaria(reg2, 0, posicion-1);
+
+        if(encontrado != -1)
+        {
+            FILE *fa = fopen("datos.dat", "r+");
+
+            if(fa)
+            {
+                if(fseek(fa, (encontrado-1) * sizeof(Twrkr), SEEK_SET) == 0)
+                {
+                    printf("%2d %8d %20s %20s %20s %15s %20s %20s %4d\n", 
+                    reg[encontrado].status, reg[encontrado].key, reg[encontrado].nombre, 
+                    reg[encontrado].apPat, reg[encontrado].apMat, reg[encontrado].sexo, reg[encontrado].puesto, 
+                    reg[encontrado].estado, reg[encontrado].edad);
+                    elim = validacionNumero("quieres eliminar el registro?\n1) si.\n2) no.", 1, 2);
+                    if(elim == 1)
+                    {
+                        fseek(fa, (encontrado-1) * sizeof(Twrkr), SEEK_SET);
+                        Twrkr registro;
+                        fread(&registro, sizeof(Twrkr), 1, fa);
+                        registro.status = 0;
+                        fseek(fa, (encontrado-1) * sizeof(Twrkr), SEEK_SET);
+                        fwrite(&registro, sizeof(Twrkr), 1, fa);
+                    }
+                }
+                else
+                {
+                    printf("erro al mover el puntero de archivo\n");
+                }
+            }
+            else
+            {
+                printf("error al abrir el archivo\n");
+            }
         }
         else
         {
-            if(editar == 2)
-            {
-                validacionTexto("dame el nuevo apellido", apPat, 30);
-                strcpy(reg[encontrado].apellidoPaterno, apPat);
-            }
-            else
-            {
-                if(editar == 3)
-                {
-                    validacionTexto("dame el nuevo nombre", apMat, 30);
-                    strcpy(reg[encontrado].apellidoMaterno, apMat);
-                }
-                else
-                {
-                    if(editar == 4)
-                    {
-                        reg[encontrado].edad = validacionNumero("dame la edad", 15, 70);
-                    }
-                    else
-                    {
-                        printf("1) HOMBRE\n");
-                        printf("2) MUJER\n");
-                        reg[encontrado].sexo = validacionNumero("elije el sexo", 1, 2);
-                    }
-                }
-            }
-        }
-    }
-}
-
-void crearArchivoBinario(Talumns reg[], int posicion)
-{
-    Talumns registro;
-    int i;
-    char nombre[30];
-    FILE *fa;
-    validacionArchivo("dame el nombre para tu archivo binario", nombre, 30);
-    strcat(nombre, ".dll");
-    fa = fopen(nombre, "ab");
-
-    for(i=0; i<posicion; i++)
-    {
-        registro = reg[i];
-        fwrite(&registro, sizeof(Talumns), 1, fa);
-    }
-    fclose(fa);
-}
-
-int cargarArchivoBinario(Talumns reg[], int posicion, int maximo)
-{
-    int i=0;
-    Talumns registro;
-    FILE *fa;
-    char nombre[30];
-    validacionArchivo("dame el nombre del archivo binario", nombre, 30);
-    strcat(nombre, ".dll");
-    fa = fopen(nombre, "rb");
-
-    if(fa)
-    {
-        while(fread(&registro, sizeof(Talumns), 1, fa))
-        {
-            if(posicion + 1 > maximo)
-            {
-                printf("no se pudo cargar todo el archivo.\nsolo se cargaron %d registros\n", i);
-                return posicion;
-            }
-            else
-            {
-                reg[posicion++] = registro;
-                i++;
-            }
-        }
-        fclose(fa);
-    }
-    return posicion;
-}
-
-void mostrarArchivoTxt(int posicion, char archivo[])
-{
-    FILE *fa;
-    Talumns registro;
-    int num;
-    char sex[10]; 
-    strcat(archivo, ".txt");
-    fa = fopen(archivo, "r");
-    if(fa)
-    {
-        while(!feof(fa))
-        {
-            fscanf(fa, "%d.- %d %s %s %s %d %s", &num, &registro.key, registro.nombre, registro.apellidoPaterno, registro.apellidoMaterno, &registro.edad, sex);
-            registro.status = 1;
-            if(strcmp(sex, "HOMBRE") == 0)
-            {
-                registro.sexo = 1;
-            }
-            else
-            {
-                if(strcmp(sex, "MASCULINO") == 0)
-                {
-                    registro.sexo = 1;
-                }
-                else
-                {
-                    if(strcmp(sex, "MUJER") == 0)
-                    {
-                        registro.sexo = 2;
-                    }
-                    else
-                    {
-                        if(strcmp(sex, "FEMENINO") == 0)
-                        {
-                            registro.sexo = 2;
-                        }
-                    }
-                }
-            }
-            printf("%3d %10d %20s %20s %20s %4d", num, registro.key, registro.nombre, registro.apellidoPaterno, registro.apellidoMaterno, registro.edad);
-            if(registro.sexo == 1)
-            {
-                printf(" %8s\n", "HOMBRE");
-            }
-            else
-            {
-                printf(" %8s\n", "MUJER");
-            }
-            posicion++;
+            printf("la matricula no existe\n");
         }
     }
     else
     {
-        printf("el archivo no existe\n");
-    }
-}
+        int num;
+        num = validacionNumero("que matricula buscas\n", 300000, 399999);
+        encontrado = existeValor2(reg2, posicion, num);
 
-void imprimirRegistroTxt(Talumns reg[], int i, int posicion)
-{
-    printf("%3s %10s %20s %20s %20s %4s %8s\n", "No.", "empleado", "nombre", "apellido paterno", "apellido materno", "edad", "sexo");
-    for(i=0; i<posicion; i++)
-    {
-        if(reg[i].status == 1)
+        if(encontrado != -1)
         {
-            printf("%3d %10d %20s %20s %20s %4d", i+1, reg[i].key, reg[i].nombre, reg[i].apellidoPaterno, reg[i].apellidoMaterno, reg[i].edad);
-            if(reg[i].sexo == 1)
+            FILE *fa = fopen("datos.dat", "r+");
+
+            if(fa)
             {
-                printf(" %8s\n", "HOMBRE");
+                if(fseek(fa, (encontrado-1) * sizeof(Twrkr), SEEK_SET) == 0)
+                {
+                    printf("%2d %8d %20s %20s %20s %15s %20s %20s %4d\n", 
+                    reg[encontrado].status, reg[encontrado].key, reg[encontrado].nombre, 
+                    reg[encontrado].apPat, reg[encontrado].apMat, reg[encontrado].sexo, reg[encontrado].puesto, 
+                    reg[encontrado].estado, reg[encontrado].edad);
+                    elim = validacionNumero("quieres eliminar el registro?\n1) si.\n2) no.", 1, 2);
+                    if(elim == 1)
+                    {
+                        fseek(fa, (encontrado-1) * sizeof(Twrkr), SEEK_SET);
+                        Twrkr registro;
+                        fread(&registro, sizeof(Twrkr), 1, fa);
+                        registro.status = 0;
+                        fseek(fa, (encontrado-1) * sizeof(Twrkr), SEEK_SET);
+                        fwrite(&registro, sizeof(Twrkr), 1, fa);
+                    }
+                }
+                else
+                {
+                    printf("error al mover el puntero de archivo\n");
+                }
             }
             else
             {
-                printf(" %8s\n", "MUJER");
+                printf("error al abrir el archivo\n");
             }
         }
-    }
-}
-
-void numeroRegistros()
-{
-    int contador;
-    char archivo[50];
-    char parametros[50];
-
-    validacionArchivo("ingresa el nombre del archivo que quieres evaluar:", archivo, 50);
-
-    sprintf(parametros, "archivoExterno.exe %s", archivo);
-    contador = system(parametros);
-
-    if(contador != -1)
-    {
-        printf("el archivo %s tiene %d registros", archivo, contador);
-    }
-    else
-    {
-        printf("el archivo no se encontro");
-    }
-}
-
-void generarTxt(Talumns reg[], int posicion)
-{
-    int i;
-    FILE *fa;
-    char archivo[30];
-    
-    validacionArchivo("escribe como quieres nombrar tu archivo", archivo, 30);
-
-    strcat(archivo, ".txt");
-    fa = fopen(archivo, "w");
-
-    for(i =0; i<posicion; i++)
-    {
-        if(reg[i].status == 1)
+        else
         {
-            fprintf(fa, "%6d.- %10d %10s %15s %15s %5d", i+1, reg[i].key, reg[i].nombre, reg[i].apellidoPaterno, reg[i].apellidoMaterno, reg[i].edad);
-            if(reg[i].sexo == 1)
-            {
-                fprintf(fa, " %8s\n", "HOMBRE");
-            }
-            else
-            {
-                fprintf(fa, " %8s\n", "MUJER");
-            }
+            printf("la matricula no existe\n");
         }
     }
+} 
 
-    fclose(fa);
-    printf("archivo generado\n");
-}
-
-void registroAleatorio(Talumns reg[], int posicion, int n)
+void agregar(Twrkr reg[], Tindex reg2[], int posicion, int n)
 {
     int li, ls, i;
 
@@ -452,31 +304,50 @@ void registroAleatorio(Talumns reg[], int posicion, int n)
         status(reg, i);
         li=300000;
         ls=399999;
-        matricula(reg, li, ls, i);
+        matricula(reg, reg2, li, ls, i);
         li= 1, ls= 50;
         apellidoPaterno(reg, i);
         apellidoMaterno(reg, i);
         nombre(reg, i);
-        li=17, ls=50;
+        li=17, ls=70;
         edad(reg, i, li, ls);
+        ls=33;
+        li=1;
+        state(reg, i, li, ls);
+        ls=30;
+        li=1;
+        jobPossition(reg, i, li, ls);
+
+        reg2[i].consecutivo = i;
+
+        // printf("%4d %7s %3d %8d %10s %10s %10s %3d %3s %13s\n", i+1, reg[i].sexo, reg[i].status, reg[i].key, reg[i].apPat, reg[i].apMat, reg[i].nombre, reg[i].edad, reg[i].estado, reg[i].puesto);
     }
 }
 
-void sexo(Talumns reg[], int posicion, int li, int ls)
+void sexo(Twrkr reg[], int posicion, int li, int ls)
 {
-    int sexo;
-    sexo= (rand()%ls) +li;
-    reg[posicion].sexo = sexo;
+    int sex;
+    sex= (rand()%ls) +li;
+    if(sex == 1)
+    {
+        strcpy(reg[posicion].sexo, "HOMBRE");
+    }
+    else
+    {
+        strcpy(reg[posicion].sexo, "MUJER");
+    }
+    // printf("%s\n", reg[posicion].sexo);
+    // reg[posicion].sexo = sexo;
 }
 
-void status(Talumns reg[], int posicion)
+void status(Twrkr reg[], int posicion)
 {
     int estado;
     estado= 1;
     reg[posicion].status = estado;
 }
 
-void matricula(Talumns reg[], int li, int ls, int posicion)
+void matricula(Twrkr reg[], Tindex reg2[], int li, int ls, int posicion)
 {
     int numeroUsuario, rango= (ls-li) +1;
     int existe;
@@ -485,9 +356,11 @@ void matricula(Talumns reg[], int li, int ls, int posicion)
         existe = existeValor(reg, posicion, numeroUsuario);
     }while(existe != -1);
     reg[posicion].key = numeroUsuario;
+    reg2[posicion].llave = numeroUsuario;
+
 }
 
-void apellidoPaterno(Talumns reg[], int posicion)
+void apellidoPaterno(Twrkr reg[], int posicion)
 {
     int numero;
     char apellidos[100][20] = {
@@ -514,10 +387,10 @@ void apellidoPaterno(Talumns reg[], int posicion)
     };
 
     numero = (rand()%99) +1;
-    strcpy(reg[posicion].apellidoPaterno, apellidos[numero]);
+    strcpy(reg[posicion].apPat, apellidos[numero]);
 }
 
-void apellidoMaterno(Talumns reg[], int posicion)
+void apellidoMaterno(Twrkr reg[], int posicion)
 {
     int numero;
     char apellidos[100][20] = {
@@ -544,10 +417,10 @@ void apellidoMaterno(Talumns reg[], int posicion)
     };
 
     numero = (rand()%99) +1;
-    strcpy(reg[posicion].apellidoMaterno, apellidos[numero]);
+    strcpy(reg[posicion].apMat, apellidos[numero]);
 }
 
-void nombre(Talumns reg[], int posicion)
+void nombre(Twrkr reg[], int posicion)
 {
     int numero;
     char nombresHombre[50][20] = {
@@ -577,7 +450,7 @@ void nombre(Talumns reg[], int posicion)
     "CONSUELO", "ANGELA", "INMACULADA", "FELICIDAD", "CECILIA"
     };
 
-    if(reg[posicion].sexo == 1)
+    if(strcmp(reg[posicion].sexo, "HOMBRE") == 0)
     {
         numero = (rand()%49) +1;
         strcpy(reg[posicion].nombre, nombresHombre[numero]);
@@ -590,13 +463,73 @@ void nombre(Talumns reg[], int posicion)
     
 }
 
-void edad(Talumns reg[], int posicion, int li, int ls)
+void edad(Twrkr reg[], int posicion, int li, int ls)
 {
     int rango= (ls-li)+1;
     reg[posicion].edad = (rand()%rango)+li;
 }
 
-int existeValor(Talumns reg[], int n, int numero)
+void state(Twrkr reg[], int posicion, int li, int ls)
+{
+    int est;
+    int rango = (ls-li);
+
+    char iniEstado[][3] = 
+    {"AS", "BC", "BS", "CC", "CS", 
+    "CH", "CL", "CM", "DG", "GT", 
+    "GR", "HG", "JC", "MC", "MN", 
+    "MS", "NT", "NL", "OC", "PL", 
+    "QT", "QR", "SP", "SL", "SR", 
+    "TC", "TS", "TL", "VZ", "YN", 
+    "ZS", "DF", "NE"};
+
+    est = (rand()% rango) +1;
+    strcpy(reg[posicion].estado, iniEstado[est-1]);
+}
+
+void jobPossition(Twrkr reg[], int posicion, int li, int ls)
+{
+    int job;
+    int rango = (ls-li) +1;
+
+    char jobs[][12] = {
+        "Medico",
+        "Enfermero",
+        "Maestro",
+        "Chef",
+        "Disenador",
+        "Tecnico",
+        "Carpintero",
+        "Electrico",
+        "Mecanico",
+        "Farmaceutico", 
+        "Piloto",
+        "Actor",
+        "Gerente",
+        "Vendedor",
+        "Analista",
+        "Conductor",
+        "Abogado",
+        "Jardinero",
+        "Artista",
+        "Oficial",
+        "Chofer",
+        "Guardia",
+        "Bombero",
+        "Cantante",
+        "Escritor",
+        "Modelo",
+        "Barbero",
+        "Camarero",
+        "Editor",
+        "Astronomo"
+    };
+
+    job = (rand()% rango) +li;
+    strcpy(reg[posicion].puesto, jobs[job-1]);
+}
+
+int existeValor(Twrkr reg[], int n, int numero)
 {
     int i; 
     for(i = 0; i < n ; i++)    
@@ -609,117 +542,20 @@ int existeValor(Talumns reg[], int n, int numero)
     return -1;
 }
 
-void eliminarRegistro(Talumns reg[], int posicion)
+int existeValor2(Tindex reg2[], int n, int numero)
 {
-    int eliminar, numeroUsuario;
-    numeroUsuario = validacionNumero("dame la matricula que quieres eliminar", 300000, 399999);
-    eliminar = existeValor(reg, posicion-1, numeroUsuario);
-    if(eliminar != -1)
+    int i; 
+    for(i = 0; i < n ; i++)    
     {
-        if(reg[eliminar].status == 1)
+        if(reg2[i].llave == numero)
         {
-            reg[eliminar].status = 0;
-            printf("estudiante dado de baja\n");
-            imprimirBuscado(reg, eliminar);
-        }
-        else
-        {
-            printf("la matricula ya estaba dada de baja\n");
+            return i;
         }
     }
-    else
-    {
-        printf("esta matricula no esta en el registro\n");
-    }
+    return -1;
 }
 
-void buscarElemento(Talumns reg[], int posicion, int bandera)
-{
-    int numeroUsuario, buscar;
-
-    if(bandera == 0)
-    {
-        printf("busqueda secuencial\n");
-        numeroUsuario = validacionNumero("que matricula buscas?", 300000, 399999);
-        buscar = existeValor(reg, posicion, numeroUsuario);
-    }
-    else
-    {
-        printf("busqueda binaria\n");
-        buscar = busquedaBinaria(reg, 0, posicion - 1);
-    }
-
-    if(buscar != -1)
-    {
-        imprimirBuscado(reg, buscar);
-    }
-}
-
-void imprimirRegistro(Talumns reg[], int posicion)
-{
-    int i;
-    printf("%3s %10s %20s %20s %20s %4s %8s\n", "No.", "empleado", "nombre", "apellido paterno", "apellido materno", "edad", "sexo");
-    for(i=0; i<posicion; i++)
-    {
-        if(reg[i].status == 1)
-        {
-            printf("%3d %10d %20s %20s %20s %4d", i+1, reg[i].key, reg[i].nombre, reg[i].apellidoPaterno, reg[i].apellidoMaterno, reg[i].edad);
-            if(reg[i].sexo == 1)
-            {
-                printf(" %8s\n", "HOMBRE");
-            }
-            else
-            {
-                printf(" %8s\n", "MUJER");
-            }
-        }
-    }
-}
-
-void imprimirBuscado(Talumns reg[], int posicion)
-{
-    printf("numero de registro: ");
-    printf("%d\n", posicion + 1);
-    printf("empleado: ");
-    printf("%d\n", reg[posicion].key);
-    printf("nombre: ");
-    printf("%s\n", reg[posicion].nombre);
-    printf("apellido paterno: ");
-    printf("%s\n", reg[posicion].apellidoPaterno);
-    printf("apellido materno: ");
-    printf("%s\n", reg[posicion].apellidoMaterno);
-    printf("edad: ");
-    printf("%d\n", reg[posicion].edad);
-    printf("sexo: ");
-    if(reg[posicion].sexo == 1)
-    {
-        printf("hombre\n");
-    }
-    else
-    {
-        printf("mujer\n");
-    }
-}
-
-void ordenarAscendente(Talumns reg[], int n)
-{
-    int i, j;    
-    Talumns aux;
-    for(i=0; i<n; i++)  
-    {
-        for(j=i+1; j<n; j++)   
-        {
-            if(reg[j].key <reg[i].key)   
-            {
-                aux = reg[i];         
-                reg[i] = reg[j];
-                reg[j] = aux;
-            }
-        }
-    }
-}
-
-int busquedaBinaria(Talumns reg[], int izquierda, int derecha)
+int busquedaBinaria(Tindex reg2[], int izquierda, int derecha)
 {
     int numeroUsuario;
     numeroUsuario = validacionNumero("que matricula buscas?", 300000, 399999);
@@ -728,13 +564,13 @@ int busquedaBinaria(Talumns reg[], int izquierda, int derecha)
     {
         int medio = izquierda + (derecha - izquierda) / 2;
 
-        if (reg[medio].key == numeroUsuario)
+        if (reg2[medio].llave == numeroUsuario)
         {
             printf("%d\n", medio);
             return medio;
         }
 
-        if (reg[medio].key < numeroUsuario)
+        if (reg2[medio].llave < numeroUsuario)
         {
             izquierda = medio + 1;
         }
@@ -745,74 +581,4 @@ int busquedaBinaria(Talumns reg[], int izquierda, int derecha)
     }
 
     return -1;
-}
-
-void cambiar(Talumns reg[], int i, int j)
-{
-    Talumns temp = reg[i];
-    reg[i] = reg[j];
-    reg[j] = temp;
-}
-
-int particion(Talumns reg[], int menor, int mayor)
-{
-    Talumns pivot;
-    pivot.key = reg[mayor].key;
-    int i = menor - 1;
-
-    for (int j = menor; j <= mayor - 1; j++)
-    {
-        if (reg[j].key <= pivot.key)
-        {
-            i++;
-            cambiar(reg, i, j);
-        }
-    }
-    cambiar(reg, i + 1, mayor);
-    return i + 1;
-}
-
-void quicksort(Talumns reg[], int menor, int mayor)
-{
-    if (menor < mayor)
-    {
-        int pi = particion(reg, menor, mayor);
-
-        quicksort(reg, menor, pi - 1);
-        quicksort(reg, pi + 1, mayor);
-    }
-}
-
-void inactivos(Talumns reg[], int posicion)
-{
-    int j;
-    char archivo[30];
-    FILE *fb;
-    validacionArchivo("escribe como quieres nombrar tu archivo", archivo, 30);
-
-    strcat(archivo, ".txt");
-    fb = fopen(archivo, "w");
-
-    for(j=0; j<posicion; j++)
-    {
-        if(reg[j].status == 0)
-        {
-            fprintf(fb, "%3d %10d %10s %15s %15s %4d", j+1, reg[j].key, reg[j].nombre, reg[j].apellidoPaterno, reg[j].apellidoMaterno, reg[j].edad);
-            printf("%3d %10d %10s %15s %15s %4d", j+1, reg[j].key, reg[j].nombre, reg[j].apellidoPaterno, reg[j].apellidoMaterno, reg[j].edad);
-            if(reg[j].sexo == 1)
-            {
-                fprintf(fb, " %8s ", "HOMBRE");
-                printf(" %8s", "HOMBRE");
-            }
-            else
-            {
-                fprintf(fb, " %8s", "MUJER");
-                printf(" %8s \n", "MUJER");
-            }
-            fprintf(fb, "\n");
-            printf("\n");
-            j++;
-        }
-    }
-    fclose(fb);
 }

@@ -66,24 +66,24 @@ int busquedaSecuencial(int vector[], int n, int numero)  // funcion para buscar 
                 // se hace para no tener conflicto con los tamanos de los vectores
 }
 
-void ordenarVectorAscendente(int vector[], int n)  // funcion para ordenar vector de menor a mayor
-{
-    int i, j, aux=0;     // indices [i] y [j] sirven para comparar los valores del vector para que ordenarlos correctamente
-                         // [aux] sirve para intercambiar los valores en caso de que un numero de posicion mas alta sea menor a otro de pocision mas baja
+// void ordenarVectorAscendente(int vector[], int n)  // funcion para ordenar vector de menor a mayor
+// {
+//     int i, j, aux=0;     // indices [i] y [j] sirven para comparar los valores del vector para que ordenarlos correctamente
+//                          // [aux] sirve para intercambiar los valores en caso de que un numero de posicion mas alta sea menor a otro de pocision mas baja
 
-    for(i=0; i<n; i++)   // ciclo para recorrer los valores a comparar
-    {
-        for(j=i+1; j<n; j++)   // ciclo para comparar valores de posicion diferente a [i]. 
-        {
-            if(vector[j]<vector[i])   // condicion en la que se compara si el valor de la posicion [j] es mas grande que el de [i]
-            {
-                aux = vector[i];         // este bloque hace el intercambio con apoyo del auxiliar [aux]
-                vector[i] = vector[j];
-                vector[j] = aux;
-            }
-        }
-    }
-}
+//     for(i=0; i<n; i++)   // ciclo para recorrer los valores a comparar
+//     {
+//         for(j=i+1; j<n; j++)   // ciclo para comparar valores de posicion diferente a [i]. 
+//         {
+//             if(vector[j]<vector[i])   // condicion en la que se compara si el valor de la posicion [j] es mas grande que el de [i]
+//             {
+//                 aux = vector[i];         // este bloque hace el intercambio con apoyo del auxiliar [aux]
+//                 vector[i] = vector[j];
+//                 vector[j] = aux;
+//             }
+//         }
+//     }
+// }
 
 void ordenarVectorDescendente(int vector[], int n)  // funcion para ordenar vector de mayor a menor
 {
